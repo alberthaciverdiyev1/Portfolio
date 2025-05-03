@@ -3,14 +3,11 @@
     const cursor = document.querySelector('.cursor');
     const logo = document.querySelector('.logo');
 
-    logo.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover-effect');
-    });
-    
-    logo.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover-effect');
-    });
-    
+    const moveCursor = e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    };
+
     const animateText = function (e) {
         const span = this.querySelector('span');
         const { offsetX: x, offsetY: y } = e;
@@ -19,18 +16,19 @@
         const xMove = (x / width) * (move * 2) - move;
         const yMove = (y / height) * (move * 2) - move;
 
+        if (span) {
+            if (e.type === 'mouseleave') {
+                span.style.transform = 'translate(0, 0)';
+            } else {
+                span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            }
+        }
+
         if (e.type === 'mouseleave') {
-            span.style.transform = 'translate(0, 0)';
             cursor.classList.remove('hover-effect');
         } else {
-            span.style.transform = `translate(${xMove}px, ${yMove}px)`;
             cursor.classList.add('hover-effect');
         }
-    };
-
-    const moveCursor = e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
     };
 
     links.forEach(link => {
@@ -40,3 +38,19 @@
 
     window.addEventListener('mousemove', moveCursor);
 })();
+
+
+
+const menuBtn = document.querySelector('.menu');
+const fullMenu = document.querySelector('.full-menu');
+
+menuBtn.addEventListener('click', () => {
+  fullMenu.classList.toggle('active');
+});
+
+
+const closeBtn = document.querySelector('.close-btn');
+
+closeBtn.addEventListener('click', () => {
+  fullMenu.classList.remove('active');
+});
