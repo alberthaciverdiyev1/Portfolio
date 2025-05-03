@@ -1,0 +1,20 @@
+:root {
+    --text-color: #fff;
+    --border-color: rgba(255, 255, 255, 0.3);
+    --dark-bg: #000;
+    --darker-bg: #111;
+    --dark-gray: #151515;
+    --medium-gray: #1d1d1d;
+    --light-gray: #808080;
+    --lighter-gray: #A0A0A0;
+    --menu-hover-gray: #999;
+    --section-padding: 6rem 0;
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --text-sm: 1.4rem;
+    --text-md: 1.6rem;
+    --text-lg: 2rem;
+    --text-xl: 4.8rem;
+    --text-xxl: 10rem;
+  }
+  
