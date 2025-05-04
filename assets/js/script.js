@@ -100,3 +100,40 @@ menuLinks.forEach(link => {
     document.body.style.overflow = 'auto';
   });
 });
+
+
+
+
+
+
+
+//topbutton
+
+let mybutton = document.getElementById("topBtn");
+let progressCircle = document.getElementById("progressCircle").querySelector("circle");
+
+window.onscroll = function() {
+  scrollFunction()
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "flex";
+    
+    // Calculate scroll progress
+    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = (document.documentElement.scrollTop / scrollTotal);
+    const dashOffset = 125.6 - (125.6 * scrollProgress);
+    
+    progressCircle.style.strokeDashoffset = dashOffset;
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
