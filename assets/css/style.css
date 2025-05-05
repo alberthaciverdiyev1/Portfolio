@@ -1044,22 +1044,32 @@ object-fit: cover;
     #contact-us{
       padding: 7rem 0rem;
     }
-    .contact-us{
+    .contact-us {
       padding: 7rem 5rem;
       border-radius: 15px;
+      background-size: cover;
       background-image: url(../images/gr-back.png);
       background-repeat: no-repeat;
       display: flex;
+    
+      gap: 4rem;
     }
-    .contact-us .left{
+    
+    .contact-us .left {
       width: 40%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 10rem;
     }
+    
+    .contact-us .right {
+      width: 60%;
+      /* margin-top: 2rem; */
+    }
+    
     .contact-us h3{
-      width: 80%;
+      width: 85%;
       font-size: 3.6rem;
       font-weight: 400;
 
@@ -1075,6 +1085,183 @@ object-fit: cover;
     .contact-us h3 span{
       color: var(--light-gray);
     }
+
+.form-box{
+  display: flex;
+  gap: 2rem;
+}
+.fullname,.email-address,.subject{
+  display: flex;
+  flex-direction: column;
+  
+}
+.contact-us .right form {
+  display: flex;
+  flex-direction: column;
+  gap:5rem;
+  /* width: 100%; */
+}
+
+.form-box {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.fullname,
+.email-address,
+.subject,
+.budget,
+.message {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.5rem;
+}
+
+label {
+  color: white;
+ 
+  font-size: var(--text-md);
+  margin-bottom: 0.5rem;
+}
+
+label span {
+  color: red;
+}
+
+.optional {
+  color: gray;
+  font-size: var(--text-md);
+}
+input:focus,textarea:focus{
+  border:none;
+  border-bottom: 1px solid var(--border-color);
+  outline: none;
+}
+
+input,
+textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #444;
+  padding: 0.7rem 0;
+  color: white;
+  font-size: 1rem;
+}
+input::placeholder{
+  font-size: var(--text-md);
+}
+textarea {
+  resize: vertical;
+  height: 140px;
+  font-family: 'Inter',sans-serif;
+  font-size: var(--text-lg);
+}
+
+.message-box {
+  width: 100%;
+}
+
+.send-button {
+  align-self: flex-start;
+  padding: 2rem 2rem;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.send-button i {
+  transition: transform 0.3s ease;
+}
+
+.send-button:hover i {
+  transform: translateX(5px);
+}
+
+
+#footer{
+  background-color: #212121;
+  border-top: 1px solid var(--border-color);
+}
+.footer{
+  padding: 6rem 4rem;
+  display: flex;
+  gap: 6rem;
+
+}
+.footer .left{
+  width: 40%;
+}
+.footer .right{
+  width: 60%;
+}
+.footer .right h2{
+  font-size: 3.6rem;
+  font-weight: 400;
+}
+.footer .right h2 span{
+  color: var(--light-gray);
+}
+.information{
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+.information-left p,.information-right p{
+  text-transform:uppercase;
+  font-variant: small-caps;
+
+  font-size: var(--text-sm);
+color: #888888;
+}
+.information-left h4,.information-right h4{
+margin-top: 3rem;
+font-size: var(--text-md);
+font-weight: 400;
+}
+
+
+.copyright{
+  padding: 7rem 0rem;
+  display: flex;
+  justify-content: space-between;
+
+}
+.copyright .left{
+  color: var(--light-gray);
+}
+.copyright .left a{
+  color: var(--text-color);
+
+}
+.copyright .right ul {
+  display: flex;
+gap: 8rem;
+}
+
+.copyright .right ul li{
+  list-style: none ;
+  
+}
+.copyright .right ul li a{
+  color:var(--lighter-gray)
+}
+
+.active{
+  color: var(--text-color)!important;
+}
 /*media-queryler*/
 @media (max-width: 992px) {
   .nav-wrapper {
@@ -1123,6 +1310,16 @@ object-fit: cover;
 
 
 @media (max-width: 756px) {
+  .copyright{
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .copyright .left{
+    width: 100%;
+  }
+  .copyright .right{
+    width: 100%;
+  }
   .article-cards{
     flex-direction: column;
   }
@@ -1192,9 +1389,34 @@ object-fit: cover;
   .featured-right{
     width: 100%;
   }
+  .contact-us{
+    flex-direction: column;
+  }
+  .contact-us .left{
+    width: 100%;
+  }
+  .contact-us .right{
+    width: 100%;
+  }
+  .footer{
+    flex-direction: column;
+  }
+  .footer .left{
+    width: 100%;
+  }
+  .footer .right {
+    width: 100%;
+  }
+  .copyright .right ul {
+    justify-content: space-between;
+    gap: 0px;
+  }
 }
 
 @media (max-width: 576px) {
+  .form-box{
+    flex-direction: column;
+  }
   header {
     flex-direction: column;
     gap: 2.5rem;
