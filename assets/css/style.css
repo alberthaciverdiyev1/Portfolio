@@ -1158,7 +1158,7 @@ object-fit: cover;
     }
     .contact-us {
       padding: 7rem 5rem;
-      border-radius: 15px;
+      border-radius: 35px;
       background-size: cover;
       background-image: url(../images/gr-back.png);
       background-repeat: no-repeat;
