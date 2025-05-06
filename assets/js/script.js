@@ -136,3 +136,42 @@ function topFunction() {
 }
 
 
+
+
+  const track = document.querySelector(".carousel-track");
+  let index = 0;
+  const cardCount = document.querySelectorAll(".testimonials-card").length;
+  const visibleCount = 3;
+
+  function autoSlide() {
+    index++;
+    if (index > cardCount - visibleCount) index = 0;
+    track.style.transform = `translateX(-${(100 / visibleCount) * index}%)`;
+  }
+
+  setInterval(autoSlide, 5000);
+
+  let startX = 0;
+  let currentTranslate = 0;
+
+  track.addEventListener("mousedown", (e) => {
+    startX = e.clientX;
+    track.style.transition = "none";
+    document.onmousemove = (e) => {
+      const diff = e.clientX - startX;
+      track.style.transform = `translateX(${currentTranslate + diff}px)`;
+    };
+    document.onmouseup = (e) => {
+      const diff = e.clientX - startX;
+      if (Math.abs(diff) > 50) {
+        if (diff < 0 && index < cardCount - visibleCount) index++;
+        else if (diff > 0 && index > 0) index--;
+      }
+      currentTranslate = -((track.offsetWidth / cardCount) * index);
+      track.style.transition = "transform 0.5s ease-in-out";
+      track.style.transform = `translateX(-${(100 / visibleCount) * index}%)`;
+      document.onmousemove = null;
+      document.onmouseup = null;
+    };
+  });
+

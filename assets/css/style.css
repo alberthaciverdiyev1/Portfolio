@@ -522,7 +522,6 @@ header {
   top: 60px;
 }
 
-/* OUR SERVICES SECTION */
 #ourservices {
   background-color: var(--dark-gray);
   padding: var(--section-padding);
@@ -836,7 +835,7 @@ color: var(--light-gray);
   height: 100%;
   
 }
-/*test*/
+
 .featured-cards {
   display: flex;
   flex-direction: column;
@@ -846,6 +845,7 @@ color: var(--light-gray);
 }
 
 .featured-card {
+  border: 1px solid #292929;
   display: flex;
   gap: 5rem;
   border-radius: 18px;
@@ -948,6 +948,85 @@ color: var(--light-gray);
   align-items: start;
 
 }
+.testimonials-carousel {
+  overflow: hidden;
+  position: relative;
+  padding:var(--section-padding);
+  background-size: cover;
+  background-image: url(../images/mesh-gradient.png);
+  max-width: 100%;
+}
+.carousel-container{
+
+  overflow-x: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  cursor: grab;
+}
+
+.testimonials-card {
+  display: flex;
+  gap: 6rem;
+  background-color: #29292928;
+  justify-content: space-between;
+  flex-direction: column;
+  min-width: calc(100% / 3);
+  box-sizing: border-box;
+  padding: 4rem 5rem;
+  color: white;
+  
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.rating-value {
+  font-size: 16px;
+}
+.rating-top{
+  display: flex;
+  gap: 1rem;
+}
+.stars {
+  color: red;
+  font-size: var(--text-md);
+}
+
+.text h6 {
+  font-size: var(--text-lg2);
+  font-weight: 400;
+  margin-top: 2.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+.user-info .left img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.user-info .right {
+  margin-left: 15px;
+}
+
+.user-info .right h6{
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.user-info .right p{
+  color: var(--text-color);
+}
+
 .rating{
   font-size: var(--text-lg);
   font-weight: 500;
@@ -971,6 +1050,9 @@ color: var(--light-gray);
 .award-table td {
   text-align: left;
   padding: 20px;
+}
+.award-table tbody td:nth-child(2){
+  font-size: var(--text-lg2);
 }
 
 .award-table tr th {
@@ -1031,6 +1113,10 @@ tr th:nth-child(3){
   font-size: 1.4rem;
 }
 
+#articles{
+  margin-top:10rem;
+  border-top: 1px solid var(--border-color);
+}
 .article-cards{
   display: flex;
   padding-bottom: 5rem;
@@ -1091,7 +1177,6 @@ object-fit: cover;
     
     .contact-us .right {
       width: 60%;
-      /* margin-top: 2rem; */
     }
     
     .contact-us h3{
@@ -1125,7 +1210,6 @@ object-fit: cover;
   display: flex;
   flex-direction: column;
   gap:5rem;
-  /* width: 100%; */
 }
 
 .form-box {
@@ -1219,6 +1303,7 @@ textarea {
 
 #footer{
   background-color: #212121;
+margin-top: 8rem ;
   border-top: 1px solid var(--border-color);
 }
 .footer{
@@ -1258,7 +1343,29 @@ font-size: var(--text-md);
 font-weight: 400;
 }
 
+.social-networks {
+  display: flex;
+  gap:0.5rem;
+  margin-top: 5rem;
+}
 
+.social-networks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #3a3a3a;
+  border-radius: 50%;
+  color: #fff;
+  font-size: var(--text-md);
+  transition: all 0.3s ease;
+}
+
+.social-networks a:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
 .copyright{
   padding: 7rem 0rem;
   display: flex;
@@ -1331,6 +1438,11 @@ gap: 8rem;
   .hero-description p {
     font-size: var(--text-md);
   }
+
+  .testimonials-card {
+  
+  min-width: calc(100% / 2);
+}
 }
 
 
@@ -1356,6 +1468,7 @@ gap: 8rem;
     flex-direction: column;
   }
 .featured-card{
+  
   flex-direction: column;
 }
 .featured-card-left{
@@ -1437,9 +1550,29 @@ gap: 8rem;
     justify-content: space-between;
     gap: 0px;
   }
+  .testimonials-card {
+  
+  min-width: calc(100% / 2);
+}
+.text h6{
+font-size: var(--text-lg);}
+.award-table tbody td:nth-child(2){
+font-size: var(--text-sm);
+
+
 }
 
+.contact-us h3{
+font-size: var(--text-lg2);}
+
+
 @media (max-width: 576px) {
+.information{
+flex-direction: column;
+}
+.information .information-left{
+flex-direction: column!important;}
+
   .form-box{
     flex-direction: column;
   }
@@ -1455,6 +1588,10 @@ gap: 8rem;
   .menu-left {
     padding: 4rem;
   }
+  .testimonials-card {
+  
+  min-width: 100%;
+}
 }
 
 
