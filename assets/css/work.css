@@ -1,0 +1,75 @@
+.hero-work h1{
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+.router{
+    display: flex;
+    font-size: var(--text-lg);
+    gap: 2rem;
+}
+
+.router a{
+    color: white;
+}
+.green a{
+    color:var(--green);
+}
+
+
+.hero-work {
+    margin-top: 15rem;
+    display: flex;
+    /* height: 120vh; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+
+
+  
+.featured-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding-bottom: 7rem;
+    position: relative;
+  }
+  
+  .featured-card {
+    border: 1px solid #292929;
+    display: flex;
+    gap: 5rem;
+    border-radius: 18px;
+    padding: 5rem;
+    background-color: var(--medium-gray);
+  }
+  
+  .featured-card:first-child {
+    position: sticky;
+    top: 20px; 
+    z-index: 1; 
+  }
+  
+  .featured-card:nth-child(2) {
+    position: sticky;
+    top: 40px; 
+    z-index: 3; 
+  }
+  
+  
+  .featured-card:nth-child(3) {
+    position: sticky;
+    top: 100px; 
+    z-index: 4; 
+  }
+  
+  .featured-card:nth-child(4) {
+    position: sticky;
+    top: 120px; 
+    z-index: 5; 
+  }
+  
