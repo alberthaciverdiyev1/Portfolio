@@ -237,3 +237,60 @@ letter-spacing: -3px;
 .header-container.reset {
   top: -100px;
 }
+
+
+@media (max-width:756px) {
+  .hero-work h1{
+    font-size: 45px;
+  }
+  .work-card .text h2{
+    font-size: 30px;
+  }
+
+  .work-card{
+ height: 400px;
+}
+.work-card:nth-child(4) .text h2{
+  font-size: 30px;
+}
+.work-call-action-text a{
+  font-size: 30px;
+}
+.contact-btn{
+  display: none;
+}
+.work-call-action-text{
+  max-width: 50%;
+ 
+ 
+}
+.work-call-action-text a{
+ line-height: 40px;
+}
+
+
+  .work-card:first-child {
+    position: sticky;
+    top: 0px; 
+    z-index: 1; 
+  }
+  
+  .work-card:nth-child(2) {
+    position: sticky;
+    top: 30px; 
+    z-index: 3; 
+  }
+  
+  
+  .work-card:nth-child(3) {
+    position: sticky;
+    top: 70px; 
+    z-index: 4; 
+  }
+  
+  .work-card:nth-child(4) {
+    position: sticky;
+    top: 80px; 
+    z-index: 5; 
+  }
+}
