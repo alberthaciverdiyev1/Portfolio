@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const animateText = function(e) {
             const span = this.querySelector('span');
+            
             if (!span) return;
             
             const { offsetX: x, offsetY: y } = e;
