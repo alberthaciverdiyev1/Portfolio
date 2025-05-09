@@ -57,6 +57,7 @@ closeBtn.addEventListener('click', () => {
 
 const header = document.querySelector('.header-container');
 const hero = document.querySelector('#hero');
+
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
