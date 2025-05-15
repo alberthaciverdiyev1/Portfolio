@@ -1,0 +1,296 @@
+
+.hero-work h1{
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: -3px;
+
+}
+.router{
+    display: flex;
+    font-size: var(--text-lg);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.router a{
+    color: white;
+}
+.green a{
+    color:var(--green);
+}
+
+
+.hero-work {
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+
+
+  
+.work-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding-bottom: 7rem;
+    position: relative;
+    padding: 12rem 0rem;
+  }
+  
+  .work-card {
+    border-radius: 18px;
+    padding: 2rem;
+    background-color: var(--medium-gray);
+  }
+  .work-card:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .work-card:nth-child(2)  .text h2 {
+       margin-top: 15rem;
+  }
+  .work-card:nth-child(3)  .text h2 {
+    margin-top: 15rem;
+}
+  .work-card:nth-child(1){
+    background-image: url(../images/car1.jpg);
+  }
+  .work-card:nth-child(2){
+    background-image: url(../images/car2.jpg);
+  }
+
+  .work-card:nth-child(3){
+    background-image: url(../images/card3.jpg);
+  }
+  .work-card .text h2{
+    text-align: center;
+    font-size: 80px;
+    font-weight: 500;
+  }
+  .work-card:nth-child(4){
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: url(../images/car4.jpg);
+    gap: 5rem;
+  }
+  .work-card:nth-child(4) .text h2{
+    text-align: start !important;
+    font-size: 80px;
+    margin-top: 14rem;
+    font-weight: 500;
+    
+  }
+  .work-card:first-child {
+    position: sticky;
+    top: -40px; 
+    z-index: 1; 
+  }
+  
+  .work-card:nth-child(2) {
+    position: sticky;
+    top: 0px; 
+    z-index: 3; 
+  }
+  
+  
+  .work-card:nth-child(3) {
+    position: sticky;
+    top: -100px; 
+    z-index: 4; 
+  }
+  
+  .work-card:nth-child(4) {
+    position: sticky;
+    top: 120px; 
+    z-index: 5; 
+  }
+  .buttons{
+    align-items: flex-end;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: end;
+  }
+  
+  .buttons button{
+    border: 1px solid var(--border-color);
+    margin-top: 2rem;
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0.7rem 1rem;
+    border-radius: 12px;
+  }
+
+.work-card{
+ 
+  height: 630px;
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  border-radius: 18px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.358) 0%, rgba(0, 0, 0, 0.185) 100%);
+  z-index: 1;
+}
+
+.work-card .buttons,
+.work-card .text {
+  position: relative;
+  z-index: 2;
+}
+
+.work-call-action-text a{
+  color: var(--text-color);
+  font-size: 10rem;
+font-weight: 600;
+letter-spacing: -3px;
+  text-transform: uppercase;
+  line-height: 11rem;
+
+}
+.work-call-action{
+
+  border-top: 1px solid var(--border-color);
+
+  padding: 10rem 0rem;
+}
+.work-call-action-text{
+  text-align: center;
+  max-width: 80%;
+  margin: 0  auto;
+  position: relative;
+}
+
+.contact-button{
+  position: relative;
+  
+}
+
+
+.contact-btn{
+
+  position: absolute;
+  top: -80px;
+  right: 8%;
+  font-size: 32px;
+  color: #212121;
+}
+
+
+
+.contact-btn-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem; 
+  width: 20rem;  
+  height: 20rem;
+  
+
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 50%;  
+  background: var(--green);
+  position: absolute;
+  top: -190px;
+  right: 3%;
+  font-size: 30px;
+  color: #212121;
+  text-decoration: none; 
+}
+
+
+
+.copyright-work{
+  border-top: 1px solid var(--border-color);
+}
+.header-container {
+  position: fixed;
+  top: -100px; 
+  width: 100%;
+  transition: top 0.3s ease;
+  z-index: 1000;
+}
+
+.header-container.show {
+  top: 0;
+}
+
+.header-container.reset {
+  top: -100px;
+}
+
+
+@media (max-width:756px) {
+  .hero-work h1{
+    font-size: 45px;
+  }
+  .work-card .text h2{
+    font-size: 30px;
+  }
+
+  .work-card{
+ height: 400px;
+}
+.work-card:nth-child(4) .text h2{
+  font-size: 30px;
+}
+.work-call-action-text a{
+  font-size: 30px;
+}
+.contact-btn{
+  display: none;
+}
+.work-call-action-text{
+  max-width: 50%;
+ 
+ 
+}
+.work-call-action-text a{
+ line-height: 40px;
+}
+
+
+  .work-card:first-child {
+    position: sticky;
+    top: 0px; 
+    z-index: 1; 
+  }
+  
+  .work-card:nth-child(2) {
+    position: sticky;
+    top: 30px; 
+    z-index: 3; 
+  }
+  
+  
+  .work-card:nth-child(3) {
+    position: sticky;
+    top: 70px; 
+    z-index: 4; 
+  }
+  
+  .work-card:nth-child(4) {
+    position: sticky;
+    top: 80px; 
+    z-index: 5; 
+  }
+}

@@ -1,0 +1,205 @@
+.contact-hero h1{
+    font-size: 120px;
+    font-weight: 600;
+    letter-spacing: -3px;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.hero-contact{
+    flex-direction: column;
+}
+.google-map {
+    padding-top: 5rem;
+    height: 540px;
+   
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    border-radius: 15px;
+    overflow: hidden;
+}
+.google-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+     border-radius: 20px;
+}
+
+
+#form {
+  background: #111;
+  color: white;
+  padding: 8rem 0;
+  font-family: Arial, sans-serif;
+}
+
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.form-left,
+.form-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.info{
+    display: flex;
+gap: 1rem;
+margin-top: 3rem;
+}
+.info p{
+    font-size: var(--text-md);
+    color: var(--lighter-gray);
+}
+.form-left-top h3 {
+      font-size: 48px;
+    letter-spacing: -3px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.form-left-top span {
+  color: #fff;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:200;
+}
+
+.form-left-top p {
+  color: #aaa;
+  max-width: 400px;
+}
+
+.info h5 {
+  margin: 20px 0 5px;
+  font-size: var(--text-md);
+  font-weight: 500;
+}
+
+.phone a {
+  display: inline-block;
+  margin-top: 3rem;
+  color:var(--green);
+  font-size:35px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.socials-contact{
+    margin-top: 4rem;
+}
+.socials-contact a {
+  margin-right: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: var(--text-md);
+}
+
+.socials-contact a:hover {
+  text-decoration: underline;
+}
+
+.form-right ul {
+  list-style: disc;
+  margin-bottom: 20px;
+  font-size: var(--text-lg);
+  color: #fff;
+}
+
+.form-top{
+    display: flex;
+    gap: 2rem;
+}
+.form-right input,
+.form-right textarea {
+  width: 100%;
+  background: #111;
+  border: none;
+  border-bottom: 1px solid #333;
+  color: #fff;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+}
+.address p{
+    width: 66%;
+}
+.form-right textarea {
+  height: 150px;
+  resize: none;
+}
+
+.send {
+  background: white;
+  color: black;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--text-md);
+}
+.send img{
+    width: 18px;
+    height: 18px;
+}
+.send:hover{
+    background-color: var(--green);
+}
+.send span {
+  font-size: 16px;
+}
+
+
+
+
+#footer-contact{
+    
+    border-top: 1px solid var(--border-color);
+}
+.footer{
+    padding: 15rem 0rem;
+}
+.copyright-contact{
+    border-top: 1px solid var(--border-color);
+}
+
+.hover-this {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hover-this span {
+  display: inline-block;
+  font-weight: 400;
+  color: var(--text-color);
+  font-size: var(--text-sm);
+  pointer-events: none;
+  transform: none !important;
+  text-transform: capitalize;
+}
+@media (max-width:756px) {
+    .contact-hero h1{
+       
+        font-size: 4rem;
+    }
+    .hero{
+         margin-top: 0px;
+    }
+    form{
+        flex-direction: column;
+    }
+    .info{
+        flex-direction: column;
+    }
+    .form-top{
+        flex-direction: column;
+    }
+    .phone a{
+        font-size: var(--text-lg);
+    }
+}
