@@ -37,7 +37,8 @@
                         </div>
                         <div class="ourservices-card-description">
                             <p>
-                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design, Illustration,
+                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design,
+                                Illustration,
                                 Animation increase company’s values
                             </p>
                             <div class="ourservices-card-img">
@@ -57,7 +58,8 @@
                         </div>
                         <div class="ourservices-card-description">
                             <p>
-                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design, Illustration,
+                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design,
+                                Illustration,
                                 Animation increase company’s values
                             </p>
                             <div class="ourservices-card-img">
@@ -77,7 +79,8 @@
                         </div>
                         <div class="ourservices-card-description">
                             <p>
-                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design, Illustration,
+                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design,
+                                Illustration,
                                 Animation increase company’s values
                             </p>
                             <div class="ourservices-card-img">
@@ -134,8 +137,6 @@
                 </div>
 
 
-
-
             </div>
         </div>
 
@@ -160,117 +161,65 @@
             </div>
             <div class="featured-card-section">
                 <div class="featured-cards">
-                    <div class="featured-card">
-                        <div class="featured-card-left">
-                            <div class="top">
-                                <h3>Unerio Residential
-                                    Complex Landing page </h3>
-                            </div>
-                            <div class="bottom">
-                                <p>This paragraph is short description to describe about this project, you can use it to improve SEO
-                                    or highlight some key result of this project</p>
-
-                                <div class="buttons">
-                                    <button>
-                                        Development
-                                    </button>
-                                    <button>
-                                        UI/UX
-                                    </button>
-                                    <button>
-                                        Ullustration
-                                    </button>
+                    @forelse($projects as $project)
+                        <div class="featured-card">
+                            <div class="featured-card-left">
+                                <div class="top">
+                                    <h3>{{$project->name}}</h3>
                                 </div>
-                            </div>
+                                <div class="bottom">
+                                    <p>{{$project->description}}</p>
 
-                        </div>
-                        <div class="featured-card-right">
-                            <img src="{{asset("images/testimonials1.jpg")}}" alt="">
-                        </div>
-                    </div>
-                    <div class="featured-card">
-                        <div class="featured-card-left">
-                            <div class="top">
-                                <h3>Archin Architecture Studio </h3>
-                            </div>
-                            <div class="bottom">
-                                <p>This paragraph is short description to describe about this project, you can use it to improve SEO
-                                    or highlight some key result of this project</p>
-
-                                <div class="buttons">
-                                    <button>
-                                        Mobile Responsive
-                                    </button>
-                                    <button>
-                                        UX design
-                                    </button>
-
+                                    <div class="buttons">
+                                        @forelse($project->tags as $tag)
+                                            <button>
+                                                {{$tag}}
+                                            </button>
+                                        @empty
+                                        @endforelse
+                                    </div>
                                 </div>
+
                             </div>
-
-                        </div>
-                        <div class="featured-card-right">
-                            <img src="{{asset('images/testimonials2.jpg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="featured-card">
-                        <div class="featured-card-left">
-                            <div class="top">
-                                <h3>Jorger Clarkson - Architect
-                                    Personal Portfolio </h3>
+                            <div class="featured-card-right">
+                                <img src="{{asset("storage/".$project->image)}}" alt="">
                             </div>
-                            <div class="bottom">
-                                <p>This paragraph is short description to describe about this project, you can use it to improve SEO
-                                    or highlight some key result of this project</p>
-
-                                <div class="buttons">
-                                    <button>
-                                        UI/UX
-                                    </button>
-                                    <button>
-                                        Webflow
-                                    </button>
-
+                        </div>
+                    @empty
+                        <div class="featured-card">
+                            <div class="featured-card-left">
+                                <div class="top">
+                                    <h3>Unerio Residential
+                                        Complex Landing page </h3>
                                 </div>
-                            </div>
+                                <div class="bottom">
+                                    <p>This paragraph is short description to describe about this project, you can use
+                                        it to improve SEO
+                                        or highlight some key result of this project</p>
 
-                        </div>
-                        <div class="featured-card-right">
-                            <img src="./assets/images/testimonials3.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="featured-card">
-                        <div class="featured-card-left">
-                            <div class="top">
-                                <h3>Jorger Clarkson - Architect
-                                    Personal Portfolio </h3>
-                            </div>
-                            <div class="bottom">
-                                <p>This paragraph is short description to describe about this project, you can use it to improve SEO
-                                    or highlight some key result of this project</p>
-
-                                <div class="buttons">
-                                    <button>
-                                        UI/UX
-                                    </button>
-                                    <button>
-                                        Webflow
-                                    </button>
-
+                                    <div class="buttons">
+                                        <button>
+                                            Development
+                                        </button>
+                                        <button>
+                                            UI/UX
+                                        </button>
+                                        <button>
+                                            Ullustration
+                                        </button>
+                                    </div>
                                 </div>
+
                             </div>
-
+                            <div class="featured-card-right">
+                                <img src="{{asset("images/testimonials1.jpg")}}" alt="">
+                            </div>
                         </div>
-                        <div class="featured-card-right">
-                            <img src="./assets/images/testimonials4.jpg" alt="">
-                        </div>
-                    </div>
-
-
+                    @endforelse
                 </div>
                 <div class="btn-works">
                     <button class=" featured-works-button hover-this play-button service-button philosophy-button">
-                        <a href="./services.html">
+                        <a href="{{route('$projects')}}">
                             Check Our Portfolio
                             <i class="bi bi-arrow-up-right"></i>
                         </a>
@@ -280,7 +229,6 @@
             </div>
 
         </div>
-
 
 
     </section>
@@ -376,7 +324,9 @@
                             </div>
 
                             <div class="text">
-                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business for more than 3 years. A long journey with many exciting experiences and moments. Hubfolio will always be our 1st choice.</h6>
+                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business
+                                    for more than 3 years. A long journey with many exciting experiences and moments.
+                                    Hubfolio will always be our 1st choice.</h6>
                             </div>
 
                         </div>
@@ -396,7 +346,9 @@
                             </div>
 
                             <div class="text">
-                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business for more than 3 years. A long journey with many exciting experiences and moments. Hubfolio will always be our 1st choice.</h6>
+                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business
+                                    for more than 3 years. A long journey with many exciting experiences and moments.
+                                    Hubfolio will always be our 1st choice.</h6>
                             </div>
 
                         </div>
@@ -416,7 +368,9 @@
                             </div>
 
                             <div class="text">
-                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business for more than 3 years. A long journey with many exciting experiences and moments. Hubfolio will always be our 1st choice.</h6>
+                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business
+                                    for more than 3 years. A long journey with many exciting experiences and moments.
+                                    Hubfolio will always be our 1st choice.</h6>
                             </div>
 
                         </div>
@@ -436,7 +390,9 @@
                             </div>
 
                             <div class="text">
-                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business for more than 3 years. A long journey with many exciting experiences and moments. Hubfolio will always be our 1st choice.</h6>
+                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business
+                                    for more than 3 years. A long journey with many exciting experiences and moments.
+                                    Hubfolio will always be our 1st choice.</h6>
                             </div>
 
                         </div>
