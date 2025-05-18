@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\Image;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
 class Project extends Model
 {
+    use SoftDeletes, Image;
+
     protected $guarded = [];
     protected $fillable = [
         'name',
@@ -30,7 +34,7 @@ class Project extends Model
     {
         parent::boot();
         static::creating(function ($model) {
-           $model->slug = $model->slug ?? Str::slug($model->name).'-'.Str::random(6);
+            $model->slug = $model->slug ?? Str::slug($model->name) . '-' . Str::random(6);
 
         });
     }

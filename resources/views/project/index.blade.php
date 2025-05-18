@@ -16,7 +16,7 @@
         <div class="container">
             <div class="work-cards">
                 @forelse($projects as $project)
-                    <div class="work-card" style="background-image: url({{'storage/'.$project->image}})">
+                    <div class="work-card" style="background-image: url({{$project->image()}})">
                         <div class="buttons">
                             @forelse($project->tags as $tag)
                                 <button>

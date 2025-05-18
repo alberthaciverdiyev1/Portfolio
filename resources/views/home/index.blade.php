@@ -28,70 +28,31 @@
                     </div>
                 </div>
                 <div class="ourservices-cards">
-                    <div class="ourservices-card">
-                        <div class="ourservices-card-header">
-                            <h3>Strategy and
-                                Design</h3>
-                            <i class="bi bi-bezier"></i>
 
-                        </div>
-                        <div class="ourservices-card-description">
-                            <p>
-                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design,
-                                Illustration,
-                                Animation increase company’s values
-                            </p>
-                            <div class="ourservices-card-img">
-                                <figure>
-                                    <img src="{{asset('images/card1.png')}}" alt="">
-                                </figure>
+                    @forelse($services as $service)
+
+                        <div class="ourservices-card">
+                            <div class="ourservices-card-header">
+                                <h3>{{$service->name}}</h3>
+                                <img height="40px" src="{{asset($service->icon())}}" alt="">
+
                             </div>
-                        </div>
-
-
-                    </div>
-                    <div class="ourservices-card">
-                        <div class="ourservices-card-header">
-                            <h3>Coding and
-                                Implementation</h3>
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <div class="ourservices-card-description">
-                            <p>
-                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design,
-                                Illustration,
-                                Animation increase company’s values
-                            </p>
-                            <div class="ourservices-card-img">
-                                <figure>
-                                    <img src="{{asset('images/card2.png')}}" alt="">
-                                </figure>
+                            <div class="ourservices-card-description">
+                                <p>
+                                    {{$service->description}}
+                                </p>
+                                <div class="ourservices-card-img">
+                                    <figure>
+                                        <img height="330px" src="{{asset($service->image())}}" alt="{{$service->name}}">
+                                    </figure>
+                                </div>
                             </div>
+
+
                         </div>
 
-
-                    </div>
-                    <div class="ourservices-card">
-                        <div class="ourservices-card-header">
-                            <h3>SEO/Marketing and
-                                Advertisment</h3>
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <div class="ourservices-card-description">
-                            <p>
-                                We provide digital solutions as Website Design,Mobile App Design, Landing Page design,
-                                Illustration,
-                                Animation increase company’s values
-                            </p>
-                            <div class="ourservices-card-img">
-                                <figure>
-                                    <img src="{{asset('images/card3.png')}}" alt="">
-                                </figure>
-                            </div>
-                        </div>
-
-
-                    </div>
+                    @empty
+                    @endforelse
                 </div>
                 <div class="ourphilosopy">
                     <div class="left">
@@ -182,7 +143,7 @@
 
                             </div>
                             <div class="featured-card-right">
-                                <img src="{{asset("storage/".$project->image)}}" alt="">
+                                <img src="{{asset($project->image())}}" alt="">
                             </div>
                         </div>
                     @empty
@@ -219,7 +180,7 @@
                 </div>
                 <div class="btn-works">
                     <button class=" featured-works-button hover-this play-button service-button philosophy-button">
-                        <a href="{{route('$projects')}}">
+                        <a href="{{route('projects')}}">
                             Check Our Portfolio
                             <i class="bi bi-arrow-up-right"></i>
                         </a>

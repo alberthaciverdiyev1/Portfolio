@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
 
@@ -10,8 +11,9 @@ class BaseController extends Controller
 {
     public function index()
     {
-        $projects = Project::latest()->get();
-        return view('home.index', compact('projects'));
+        $projects = Project::where('is_active',true)->latest()->get();
+        $services = Service::latest()->get();
+        return view('home.index', compact('projects','services'));
     }
     public function projects()
     {
