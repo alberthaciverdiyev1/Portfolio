@@ -201,11 +201,11 @@
                 </ul>
                 <div class="brands">
                     @forelse($partners as $partner)
-                    <div class="brand">
-                        <figure>
-                            <img src="{{$partner->image()}}" alt="">
-                        </figure>
-                    </div>
+                        <div class="brand">
+                            <figure>
+                                <img src="{{$partner->image()}}" alt="">
+                            </figure>
+                        </div>
                     @empty
                     @endforelse
                 </div>
@@ -233,7 +233,7 @@
                 </h4>
                 <button class="testimonials-button">
                     <div class="left">
-                        <img src="./assets/images/logotestimonails.svg" alt="">
+                        <img src="{{asset('/images/logotestimonails.svg')}}" alt="">
                     </div>
                     <div class="right">
                         <div class="top">
@@ -253,94 +253,42 @@
         <div class="testimonials-carousel">
             <div class="carousel-container container">
                 <div class="carousel-track">
-                    <div class="testimonials-card">
-                        <div class="rating ">
-                            <div class="rating-top">
-                                <div class="rating-value">5.0</div>
-                                <div class="stars">★★★★★</div>
-                            </div>
+                    @forelse($testiotionals as $user)
+                        <div class="testimonials-card">
+                            <div class="rating ">
+                                <div class="rating-top">
+                                    @php
+                                        $rate = !str_contains($user->rate, '.') ? number_format($user->rate, 1) : $user->rate;
+                                        $fullStars = floor($rate);
+                                        $halfStar = ($rate - $fullStars) >= 0.5;
+                                        $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                                    @endphp
 
-                            <div class="text">
-                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business
-                                    for more than 3 years. A long journey with many exciting experiences and moments.
-                                    Hubfolio will always be our 1st choice.</h6>
-                            </div>
+                                    <div class="rating-value">{{ $rate }}</div>
+                                    <div class="stars">
+                                        {!! str_repeat('★', $fullStars) !!}
+                                        {!! $halfStar ? '☆' : '' !!}
+                                        {!! str_repeat('✩', $emptyStars) !!}
+                                    </div>
 
-                        </div>
-                        <div class="user-info">
-                            <div class="left"><img src="./assets/images/avatar1.jpg" alt=""></div>
-                            <div class="right">
-                                <h6>Bradley Gordon</h6>
-                                <p>CEO & Founder, Archin Studio</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonials-card">
-                        <div class="rating ">
-                            <div class="rating-top">
-                                <div class="rating-value">5.0</div>
-                                <div class="stars">★★★★★</div>
-                            </div>
+                                </div>
 
-                            <div class="text">
-                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business
-                                    for more than 3 years. A long journey with many exciting experiences and moments.
-                                    Hubfolio will always be our 1st choice.</h6>
-                            </div>
+                                <div class="text">
+                                    <h6>{{$user->description}}</h6>
+                                </div>
 
-                        </div>
-                        <div class="user-info">
-                            <div class="left"><img src="./assets/images/avatar2.jpg" alt=""></div>
-                            <div class="right">
-                                <h6>Bradley Gordon</h6>
-                                <p>CEO & Founder, Archin Studio</p>
+                            </div>
+                            <div class="user-info">
+                                <div class="left"><img src="{{$user->image()}}" alt=""></div>
+                                <div class="right">
+                                    <h6>{{$user->name}}</h6>
+                                    <p>{{$user->position}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonials-card">
-                        <div class="rating ">
-                            <div class="rating-top">
-                                <div class="rating-value">5.0</div>
-                                <div class="stars">★★★★★</div>
-                            </div>
+                    @empty
 
-                            <div class="text">
-                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business
-                                    for more than 3 years. A long journey with many exciting experiences and moments.
-                                    Hubfolio will always be our 1st choice.</h6>
-                            </div>
-
-                        </div>
-                        <div class="user-info">
-                            <div class="left"><img src="./assets/images/avatar3.jpg" alt=""></div>
-                            <div class="right">
-                                <h6>Bradley Gordon</h6>
-                                <p>CEO & Founder, Archin Studio</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonials-card">
-                        <div class="rating ">
-                            <div class="rating-top">
-                                <div class="rating-value">5.0</div>
-                                <div class="stars">★★★★★</div>
-                            </div>
-
-                            <div class="text">
-                                <h6>Thank you so much for the support of Hubfolio team, who have been with our business
-                                    for more than 3 years. A long journey with many exciting experiences and moments.
-                                    Hubfolio will always be our 1st choice.</h6>
-                            </div>
-
-                        </div>
-                        <div class="user-info">
-                            <div class="left"><img src="./assets/images/avatar1.jpg" alt=""></div>
-                            <div class="right">
-                                <h6>Bradley Gordon</h6>
-                                <p>CEO & Founder, Archin Studio</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforelse
                 </div>
             </div>
 
@@ -349,76 +297,78 @@
 
 
     </section>
-    <section id="award ">
-        <div class="container">
-            <div class=" award container">
-                <div class="featured-left">
-                    <ul>
-                        <li>Awards & Recognition</li>
-                    </ul>
-                </div>
-                <div class="featured-right">
-                    <h4>
-                        Efforts to receive worthy rewards, awards & recognition
-                        <span>
+    @if(false)
+        <section id="award ">
+            <div class="container">
+                <div class=" award container">
+                    <div class="featured-left">
+                        <ul>
+                            <li>Awards & Recognition</li>
+                        </ul>
+                    </div>
+                    <div class="featured-right">
+                        <h4>
+                            Efforts to receive worthy rewards, awards & recognition
+                            <span>
                 help us affirm our brand.
               </span>
-                    </h4>
+                        </h4>
 
+                    </div>
                 </div>
+                <table class="award-table">
+                    <tr>
+                        <th>Hosted</th>
+                        <th>Award title</th>
+                        <th>Date</th>
+                    </tr>
+                    <tbody>
+                    <tr>
+                        <td>Awwwards</td>
+                        <td>SOTY 2023 - 1st Winner</td>
+                        <td>May 2023</td>
+                    </tr>
+                    <tr>
+                        <td>css awards</td>
+                        <td>Top 5 Best of eCommerce Websites 2022</td>
+                        <td>Dec 2022</td>
+                    </tr>
+                    <tr>
+                        <td>Awwwards</td>
+                        <td>Honor SOTD November, 2022r</td>
+                        <td>Nov 2022</td>
+                    </tr>
+                    <tr>
+                        <td>Behance Portfolio</td>
+                        <td>Winner – US Behance Portfolio Review 2021</td>
+                        <td>Aug 2021</td>
+                    </tr>
+                    <tr>
+                        <td>ui/ux global award</td>
+                        <td>Top 10 Best of Mobile App Design 2021</td>
+                        <td>Mar 2021</td>
+                    </tr>
+                    <tr>
+                        <td>fwa us award</td>
+                        <td>Winner – Best of Architecture Website 2020</td>
+                        <td>Sep 2020</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button class=" table-button hover-this play-button ">
+                    <a href="./services.html">
+                        Show More
+
+                    </a>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+
             </div>
-            <table class="award-table">
-                <tr>
-                    <th>Hosted</th>
-                    <th>Award title</th>
-                    <th>Date</th>
-                </tr>
-                <tbody>
-                <tr>
-                    <td>Awwwards</td>
-                    <td>SOTY 2023 - 1st Winner</td>
-                    <td>May 2023</td>
-                </tr>
-                <tr>
-                    <td>css awards</td>
-                    <td>Top 5 Best of eCommerce Websites 2022</td>
-                    <td>Dec 2022</td>
-                </tr>
-                <tr>
-                    <td>Awwwards</td>
-                    <td>Honor SOTD November, 2022r</td>
-                    <td>Nov 2022</td>
-                </tr>
-                <tr>
-                    <td>Behance Portfolio</td>
-                    <td>Winner – US Behance Portfolio Review 2021</td>
-                    <td>Aug 2021</td>
-                </tr>
-                <tr>
-                    <td>ui/ux global award</td>
-                    <td>Top 10 Best of Mobile App Design 2021</td>
-                    <td>Mar 2021</td>
-                </tr>
-                <tr>
-                    <td>fwa us award</td>
-                    <td>Winner – Best of Architecture Website 2020</td>
-                    <td>Sep 2020</td>
-                </tr>
-                </tbody>
-            </table>
-            <button class=" table-button hover-this play-button ">
-                <a href="./services.html">
-                    Show More
-
-                </a>
-                <i class="bi bi-chevron-right"></i>
-            </button>
-
-        </div>
 
 
-    </section>
+        </section>
 
+    @endif
     <section id="articles">
         <div class="container">
             <div class=" award container">
@@ -442,7 +392,7 @@
             <div class="article-cards">
                 <div class="article-card">
                     <figure>
-                        <img src="./assets/images/articlecard.jpg" alt="">
+                        <img src="{{asset('/images/articlecard.jpg')}}" alt="">
                     </figure>
 
                     <h4>Hubfolio agency revolutionizes work with the
@@ -453,7 +403,7 @@
                 </div>
                 <div class="article-card">
                     <figure>
-                        <img src="./assets/images/articlecard2.jpg" alt="">
+                        <img src="{{asset('/images/articlecard2.jpg')}}" alt="">
                     </figure>
 
                     <h4>Hubfolio agency revolutionizes work with the power of AI-Driven</h4>
@@ -491,41 +441,120 @@
 
                 </div>
                 <div class="right">
-                    <form method="post" action="">
+                    <form id="contactForm">
                         <div class="form-box">
                             <div class="fullname">
                                 <label for="fullname">Full Name <span>*</span></label>
                                 <input type="text" id="fullname" placeholder="Your full name">
+                                <span class="error-message" id="error-fullname"></span>
                             </div>
                             <div class="email-address">
                                 <label for="email">Email Address <span>*</span></label>
                                 <input type="email" id="email" placeholder="Your email address">
+                                <span class="error-message" id="error-email"></span>
                             </div>
                         </div>
                         <div class="form-box">
                             <div class="subject">
                                 <label for="subject">Subject <span>*</span></label>
                                 <input type="text" id="subject" placeholder="subject">
+                                <span class="error-message" id="error-subject"></span>
                             </div>
                             <div class="budget">
                                 <label for="budget">Your Budget <span class="optional">(Optional)</span></label>
                                 <input type="text" id="budget" placeholder="A range of budget for project">
+                                <span class="error-message" id="error-budget"></span>
                             </div>
                         </div>
                         <div class="form-box message-box">
                             <div class="message">
                                 <label for="message">Message</label>
                                 <textarea id="message" placeholder="Write your message here..."></textarea>
+                                <span class="error-message" id="error-message"></span>
                             </div>
                         </div>
-                        <button class="send-button">
+
+                        <span style="color: #00bb00" id="controller-message"></span>
+
+                        <button type="submit" class="send-button">
                             Send Your Message <i class="bi bi-arrow-up-right"></i>
                         </button>
                     </form>
+
                 </div>
 
             </div>
         </div>
 
     </section>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Temizle
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            document.getElementById('controller-message').textContent = '';
+            document.getElementById('controller-message').style.color = '#00bb00';
+
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const budget = document.getElementById('budget').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            let hasError = false;
+
+            if (!fullname) {
+                document.getElementById('error-fullname').textContent = 'Ad soyad boş buraxıla bilməz.';
+                hasError = true;
+            }
+
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('error-email').textContent = 'E-poçt düzgün deyil.';
+                hasError = true;
+            }
+
+            if (!subject) {
+                document.getElementById('error-subject').textContent = 'Mövzu boş buraxıla bilməz.';
+                hasError = true;
+            }
+
+            if (hasError) return;
+
+            try {
+                const response = await fetch("{{ route('contact') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        fullname, email, subject, budget, message
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('controller-message').textContent = data.message;
+                    document.getElementById('contactForm').reset();
+                } else if (response.status === 422) {
+                    Object.keys(data.errors).forEach(function (key) {
+                        const errorSpan = document.getElementById(`error-${key}`);
+                        if (errorSpan) {
+                            errorSpan.textContent = data.errors[key][0];
+                        }
+                    });
+                    document.getElementById('controller-message').style.color = '#cc0000';
+                    document.getElementById('controller-message').textContent = 'Zəhmət olmasa xətaları düzəldin.';
+                }
+            } catch (error) {
+                document.getElementById('controller-message').style.color = '#cc0000';
+                document.getElementById('controller-message').textContent = 'Xəta baş verdi.';
+                console.error(error);
+            }
+        });
+    </script>
+
+
 @endsection
