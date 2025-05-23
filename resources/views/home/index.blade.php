@@ -19,7 +19,7 @@
 
                         </h4>
                         <button class=" hover-this play-button service-button">
-                            <a href="./services.html">
+                            <a href="#">
                                 Learn More
 
                             </a>
@@ -200,38 +200,14 @@
                     <li>Our Clients & Partners</li>
                 </ul>
                 <div class="brands">
+                    @forelse($partners as $partner)
                     <div class="brand">
                         <figure>
-                            <img src="./assets/images/brand1.svg" alt="">
+                            <img src="{{$partner->image()}}" alt="">
                         </figure>
                     </div>
-                    <div class="brand">
-                        <figure>
-                            <img src="./assets/images/brand2.svg" alt="">
-                        </figure>
-                    </div>
-                    <div class="brand">
-                        <figure>
-                            <img src="./assets/images/brand3.svg" alt="">
-                        </figure>
-                    </div>
-                    <div class="brand">
-                        <figure>
-                            <img src="./assets/images/brand4.svg" alt="">
-                        </figure>
-                    </div>
-                    <div class="brand">
-                        <figure>
-                            <img src="./assets/images/brand5.svg" alt="">
-                        </figure>
-                    </div>
-                    <div class="brand">
-                        <figure>
-                            <img src="./assets/images/brand5.svg" alt="">
-                        </figure>
-                    </div>
-
-
+                    @empty
+                    @endforelse
                 </div>
             </div>
         </div>

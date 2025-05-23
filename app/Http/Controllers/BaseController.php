@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partner;
 use App\Models\Project;
 use App\Models\Service;
 use Illuminate\Contracts\Support\Renderable;
@@ -12,8 +13,9 @@ class BaseController extends Controller
     public function index()
     {
         $projects = Project::where('is_active',true)->latest()->get();
+        $partners = Partner::where('is_active',true)->latest()->get();
         $services = Service::latest()->get();
-        return view('home.index', compact('projects','services'));
+        return view('home.index', compact('projects','services','partners'));
     }
     public function projects()
     {
