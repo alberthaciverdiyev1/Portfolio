@@ -10,5 +10,5 @@ Route::controller(\App\Http\Controllers\BaseController::class)->group(function (
 });
 
 Route::controller(HomeController::class)->prefix('admin')->group(function () {
-   Route::get('/', 'home')->name('home'); 
+   Route::get('/', 'home')->name('home');
 });

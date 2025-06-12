@@ -8,8 +8,8 @@
             </div>
             <div class="right">
                 <h2>
-                    We hope to empower user and simplify
-                    <span>their everyday lives.</span>
+                    Saytınız biznesinizi təmsil edir.
+                    <span>Gəlin onu mükəmməl edək.</span>
                 </h2>
                 <div class="information">
                     <div class="information-left">

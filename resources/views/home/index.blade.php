@@ -219,17 +219,13 @@
         <div class="featured  container">
             <div class="featured-left">
                 <ul>
-                    <li>Testimonials</li>
+                    <li>Biz kimik?</li>
                 </ul>
             </div>
             <div class="featured-right">
                 <h4>
-                    We’ve helped hundreds of partners,
-                    to achieve their goals and
-                    <span>
-              stellar feedback,
-              is our reward!
-            </span>
+                    İki ilddən artıqdır ki, 20+ partnyorumuza hədəflərinə çatmaqda kömək etmişik
+                    <span> – onların yüksək məmnuniyyəti və müsbət rəyləri bizim üçün ən böyük uğurdur.</span>
                 </h4>
                 <button class="testimonials-button">
                     <div class="left">
@@ -423,8 +419,8 @@
             <div class="contact-us">
                 <div class="left">
                     <h3>
-                        Success is a team play, right?
-                        <span>Let’s work together! </span>
+                        İdeyanız var?
+                        <span>Biz onu gerçəkləşdirməyə hazırıq.</span>
 
                     </h3>
 
@@ -555,6 +551,5 @@
             }
         });
     </script>
-
 
 @endsection
