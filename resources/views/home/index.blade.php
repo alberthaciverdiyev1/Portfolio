@@ -7,24 +7,15 @@
                 <div class="ourservices-header">
                     <div class="left">
                         <ul>
-                            <li>Our Services</li>
+                            <li>Xidmətlərimiz</li>
                         </ul>
                     </div>
                     <div class="right ">
                         <h4>
-                            As a tight-knit team of experts, we create memorable and emotional websites,
-                            <span>
-                  digital experiences, and native apps.
-                </span>
+                            Peşəkar komandamızla biznesinizə dəyər qatan veb saytlar və SEO həlləri təqdim edirik.
+{{--                            <span>digital experiences, and native apps.</span>--}}
 
                         </h4>
-                        <button class=" hover-this play-button service-button">
-                            <a href="#">
-                                Learn More
-
-                            </a>
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
                     </div>
                 </div>
                 <div class="ourservices-cards">
@@ -63,13 +54,12 @@
                     </div>
                     <div class="right">
                         <ul>
-                            <li>Our Philosophy</li>
+                            <li>Məqsədimiz</li>
                         </ul>
                         <h4>
-                            We help passionate Founders perfect theirs design & development game.
-                            <span>
-                  Let’s aim for the
-                  top together!
+                            Startap və şirkətlərin veb sahədə ilk addımlarını düzgün atması və   <span style="color: #FF6600"> internetdə effektiv şəkildə tanınmasına dəstək oluruq.
+
+
                 </span>
 
                         </h4>
@@ -108,15 +98,14 @@
             <div class="featured  container">
                 <div class="featured-left">
                     <ul>
-                        <li>Featured Works</li>
+                        <li>Görülən işlərdən</li>
                     </ul>
                 </div>
                 <div class="featured-right">
                     <h4>
-                        Our user-centered design encourages
-                        <span>
-                productivity & boosts revenue.
-              </span>
+                        <span style="color: #FF6600">Müştərilərin yüksək məmnuniyyəti və müsbət rəyləri bizim üçün ən böyük uğurdur.
+
+              <span/>
                     </h4>
                 </div>
             </div>
