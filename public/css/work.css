@@ -20,7 +20,7 @@
 }
 
 .green a {
-    color: var(--green);
+    color: var(--accent-text-color);
 }
 
 
@@ -45,7 +45,7 @@
 .work-card {
     border-radius: 18px;
     padding: 2rem;
-    background-color: var(--medium-gray);
+    background-color: var(--dark-bg);
 }
 
 .work-card:nth-child(1) {
