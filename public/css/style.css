@@ -1232,9 +1232,6 @@ tr th:nth-child(3) {
 .contact-us {
     padding: 7rem 5rem;
     border-radius: 50px;
-    background-size: cover;
-    background-image: url(../images/gr-back.png);
-    background-repeat: no-repeat;
     display: flex;
 
     gap: 4rem;
