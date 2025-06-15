@@ -804,7 +804,7 @@ header {
 }
 
 #featured-works {
-    background-color: var(--darker-gray);
+    background-color: var(--dark-bg);
 }
 
 .featured {
@@ -898,7 +898,7 @@ header {
     gap: 5rem;
     border-radius: 18px;
     padding: 5rem;
-    background-color: var(--dark-gray);
+    background-color: var(--darker-gray);
 }
 
 .featured-card:first-child {
