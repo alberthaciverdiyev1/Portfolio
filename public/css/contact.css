@@ -46,6 +46,9 @@ form {
   flex: 1;
   padding: 20px;
 }
+.form-left p {
+  color: var(--text-color);
+}
 
 .info{
     display: flex;
@@ -54,23 +57,22 @@ margin-top: 3rem;
 }
 .info p{
     font-size: var(--text-md);
-    color: var(--lighter-gray);
 }
 .form-left-top h3 {
       font-size: 48px;
     letter-spacing: -3px;
   font-weight: 700;
   margin-bottom: 10px;
+  color: var(--text-color);
 }
 
 .form-left-top span {
-  color: #fff;
+  color: var(--accent-text-color);
   font-family:Arial, Helvetica, sans-serif;
   font-weight:200;
 }
 
 .form-left-top p {
-  color: #aaa;
   max-width: 400px;
 }
 
@@ -83,7 +85,7 @@ margin-top: 3rem;
 .phone a {
   display: inline-block;
   margin-top: 3rem;
-  color:var(--green);
+  color:var(--accent-text-color);
   font-size:35px;
   font-weight: bold;
   text-decoration: underline;
@@ -148,7 +150,7 @@ margin-top: 3rem;
     height: 18px;
 }
 .send:hover{
-    background-color: var(--green);
+    background-color: var(--accent-text-color);
 }
 .send span {
   font-size: 16px;
@@ -195,6 +197,9 @@ margin-top: 3rem;
     }
     .info{
         flex-direction: column;
+    }
+    .info h5{
+      color: var(--accent-text-color);
     }
     .form-top{
         flex-direction: column;
