@@ -28,7 +28,7 @@
 
 
 #form {
-  background: #111;
+  background: var(--dark-bg);
   color: white;
   padding: 8rem 0;
   font-family: Arial, sans-serif;
