@@ -868,7 +868,7 @@ header {
     border: 1px solid var(--border-color);
     margin-top: 2rem;
     background-color: transparent;
-    color: var(--text-color);
+    color: var(--accent-text-color);
     padding: 0.7rem 1rem;
     border-radius: 12px;
 
