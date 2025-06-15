@@ -1,5 +1,6 @@
 :root {
     --text-color: #fff;
+    --accent-text-color: #FF6A00;
     --border-color: rgba(255, 255, 255, 0.3);
     --dark-bg: #000;
     --darker-bg: #111;
@@ -467,7 +468,7 @@ header {
 }
 
 .hero-left h1 span {
-    color: var(--light-gray);
+    color: var(--accent-text-color);
 }
 
 .play-button {
@@ -826,7 +827,7 @@ header {
 }
 
 .featured-right h4 span {
-    color: var(--light-gray);
+    color: var(--accent-text-color);
 }
 
 .featured-left ul li {
@@ -1089,7 +1090,7 @@ header {
 }
 
 .rating-desc p {
-    color: var(--light-gray);
+    color: var(--accent-text-color);
     padding-top: 0.4rem;
 }
 
@@ -1221,7 +1222,7 @@ tr th:nth-child(3) {
 }
 
 .article-card p span {
-    color: var(--lighter-gray);
+    color: var(--accent-text-color);
 }
 
 #contact-us {
@@ -1264,12 +1265,12 @@ tr th:nth-child(3) {
 
 .contact-us .bottom span {
     font-size: var(--text-sm);
-    color: var(--lighter-gray);
+    color: var(--accent-text-color);
     margin-top: 2rem;
 }
 
 .contact-us h3 span {
-    color: var(--light-gray);
+    color: var(--accent-text-color);
 }
 
 .form-box {
@@ -1408,7 +1409,7 @@ textarea {
 }
 
 .footer .right h2 span {
-    color: var(--light-gray);
+    color: var(--accent-text-color);
 }
 
 .information {
@@ -1422,7 +1423,7 @@ textarea {
     font-variant: small-caps;
 
     font-size: var(--text-sm);
-    color: #888888;
+    color: var(--accent-text-color);
 }
 
 .information-left h4, .information-right h4 {
@@ -1467,7 +1468,7 @@ textarea {
 }
 
 .copyright .left a {
-    color: var(--text-color);
+    color: var(--accent-text-color);
 
 }
 
@@ -1486,7 +1487,7 @@ textarea {
 }
 
 .active {
-    color: var(--text-color) !important;
+    color: var(--accent-text-color) !important;
 }
 
 /*media-queryler*/
