@@ -3,6 +3,7 @@
     --border-color: rgba(255, 255, 255, 0.3);
     --dark-bg: #000;
     --darker-bg: #111;
+    --darker-gray: #0a0a0a;
     --dark-gray: #151515;
     --medium-gray: #1d1d1d;
     --light-gray: #808080;
@@ -43,7 +44,7 @@ body {
     line-height: 1.5;
     color: var(--text-color);
     cursor: default;
-    background-color: #0E0F11;
+    background-color: var(--dark-bg);
 }
 
 h3, h2, p, h4 {
@@ -548,7 +549,7 @@ header {
 }
 
 #ourservices {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-bg);
     padding: var(--section-padding);
 
 }
@@ -803,7 +804,7 @@ header {
 }
 
 #featured-works {
-    background-color: var(--dark-gray);
+    background-color: var(--darker-gray);
 }
 
 .featured {
@@ -897,7 +898,7 @@ header {
     gap: 5rem;
     border-radius: 18px;
     padding: 5rem;
-    background-color: var(--medium-gray);
+    background-color: var(--dark-gray);
 }
 
 .featured-card:first-child {
