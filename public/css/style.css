@@ -1382,7 +1382,7 @@ textarea {
 
 
 #footer {
-    background-color: #212121;
+    background-color: var(--dark-bg);
     margin-top: 8rem;
     border-top: 1px solid var(--border-color);
 }
