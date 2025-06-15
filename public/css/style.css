@@ -1319,7 +1319,7 @@ label span {
 }
 
 .optional {
-    color: gray;
+    color: var(--accent-text-color);
     font-size: var(--text-md);
 }
 
@@ -1464,7 +1464,7 @@ textarea {
 }
 
 .copyright .left {
-    color: var(--light-gray);
+    color: var(--text-color);
 }
 
 .copyright .left a {
@@ -1483,7 +1483,7 @@ textarea {
 }
 
 .copyright .right ul li a {
-    color: var(--lighter-gray)
+    color: var(--text-color)
 }
 
 .active {
