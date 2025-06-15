@@ -80,6 +80,7 @@ margin-top: 3rem;
   margin: 20px 0 5px;
   font-size: var(--text-md);
   font-weight: 500;
+  color: var(--accent-text-color);
 }
 
 .phone a {
@@ -108,7 +109,7 @@ margin-top: 3rem;
   list-style: disc;
   margin-bottom: 20px;
   font-size: var(--text-lg);
-  color: #fff;
+  color: var(--accent-text-color);
 }
 
 .form-top{
