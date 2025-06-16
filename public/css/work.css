@@ -63,7 +63,7 @@
     margin-top: 15rem;
 }
 
-/*.work-card:nth-child(1) {*/
+/* .work-card:nth-child(1) {*/
 /*    background-image: url(../images/car1.jpg);*/
 /*}*/
 
@@ -73,7 +73,7 @@
 
 /*.work-card:nth-child(3) {*/
 /*    background-image: url(../images/card3.jpg);*/
-/*}*/
+/*} */
 
 .work-card .text h2 {
     text-align: center;
