@@ -315,7 +315,7 @@ header {
 
 .menu-left {
     width: 60%;
-    background-color: var(--darker-bg);
+    background-color: var(--dark-bg);
     display: flex;
     padding: 9rem;
     align-items: center;
@@ -323,7 +323,7 @@ header {
 
 .menu-right {
     width: 40%;
-    background-color: var(--medium-gray);
+    background-color: var(--dark-bg);
     display: flex;
     justify-content: center;
     padding: 12rem 0rem;
