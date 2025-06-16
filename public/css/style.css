@@ -446,12 +446,12 @@ header {
 }
 
 .hero-left {
-    width: 45%;
+    width: 55%;
     padding-left: 3rem;
 }
 
 .hero-right {
-    width: 55%;
+    width: 45%;
 }
 
 .hero-left h1 {
