@@ -839,6 +839,30 @@ header {
     border-radius: 16px;
 }
 
+.featured-card p {
+    max-width: 100%;
+    max-height: 180px; /* Adjust as needed */
+    overflow-y: auto;
+    word-break: break-word;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    background: rgba(0,0,0,0.15);
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/*custom scrollbar for better appearance */
+.featured-card p::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+.featured-card p::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
 @keyframes ticker-scroll {
     0% {
         transform: translateX(0%);
