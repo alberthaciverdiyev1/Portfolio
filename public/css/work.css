@@ -118,7 +118,37 @@
 
 .work-card:nth-child(4) {
     position: sticky;
-    top: 120px;
+    top: 0px;
+    z-index: 5;
+}
+.work-card:nth-child(5) {
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+}
+.work-card:nth-child(6) {
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+}
+.work-card:nth-child(7) {
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+}
+.work-card:nth-child(8) {
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+}
+.work-card:nth-child(9) {
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+}
+.work-card:nth-child(10) {
+    position: sticky;
+    top: 0px;
     z-index: 5;
 }
 
