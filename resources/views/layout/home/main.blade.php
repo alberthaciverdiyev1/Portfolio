@@ -21,13 +21,7 @@
                 </div>
             </div>
             <div class="hero-right">
-                <figure>
-                    <img src="{{asset('images/cube.svg')}}" alt="">
-                </figure>
-
-                <figure>
-                    <img src="{{asset('images/circle-badge.svg')}}" alt="">
-                </figure>
+                
             </div>
         </section>
     </div>
