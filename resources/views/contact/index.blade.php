@@ -5,11 +5,9 @@
         <div class="container">
 
             <div class="hero hero-contact">
-                <h1>Get In Touch</h1>
+                <h1>İdeyaların var?</h1>
                 <div class="google-map">
-                    <iframe id="gmap_canvas"
-                            src="https://maps.google.com/maps?q=hollwood&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=&amp;output=embed">
-                    </iframe>
+                        <iframe  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3038.297671898199!2d49.849082976010216!3d40.402255971441974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDI0JzA4LjEiTiA0OcKwNTEnMDYuMCJF!5e0!3m2!1sen!2saz!4v1750264558473!5m2!1sen!2saz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -22,24 +20,23 @@
             <form action="" method="post">
                 <div class="form-left">
                     <div class="form-left-top">
-                        <h3>LET'S MAKE YOUR BRAND <span>BRILLIANT!</span> </h3>
-                        <p>If you would like to work with us or just want to get in touch, we’d love to hear from
-                            you!</p>
+                        <h3>İlk addımı sən at Qalanı  <span><b>BİZLİKDİR!</b></span> </h3>
+                        <p>Layihə, əməkdaşlıq, ya da sadəcə maraq? Söhbətə buradan başlayaq!</p>
                     </div>
 
                     <div class="form-left-center">
                         <div class="info">
                             <div class="address">
-                                <h5>Address</h5>
-                                <p>Besòs 1, 08174 Sant Cugat del Vallès, Barcelona</p>
+                                <h5>Ünvan</h5>
+                                <p>Atatürk prospekti 2a</p>
                             </div>
                             <div class="email">
                                 <h5>Email</h5>
-                                <p>Support@uithemez.com</p>
+                                <p>contact@jobing.az</p>
                             </div>
                         </div>
                         <div class="phone">
-                            <a href="tel:+18408412569">+1 840 841 25 69</a>
+                            <a href="tel:+707307230">070 730 72 30</a>
                         </div>
                     </div>
 
@@ -55,16 +52,16 @@
 
                 <div class="form-right">
                     <ul>
-                        <li>Send a message</li>
+                        <li>Mesaj Göndər</li>
                     </ul>
                     <div class="form-top" >
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Ad">
                         <input type="email" placeholder="Email">
                     </div>
 
-                    <input type="text" placeholder="Subject">
-                    <textarea placeholder="Message"></textarea>
-                    <button class="send" type="submit">Let's Talking <img src="./assets/icons/arrow-top-right (1).svg" alt=""></button>
+                    <input type="text" placeholder="Müraciət başlığı">
+                    <textarea placeholder="Mesaj yaz"></textarea>
+                    <button class="send" type="submit">Göndər <img src="{{asset('icons/arrow-top-right (1).svg')}}" alt=""></button>
                 </div>
             </form>
         </div>

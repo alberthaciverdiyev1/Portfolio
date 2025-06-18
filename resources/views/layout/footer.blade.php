@@ -14,8 +14,8 @@
                 <div class="information">
                     <div class="information-left">
 
-                        <p>Location</p>
-                        <h4>152 Thatcher Road St, Mahattan, NY 10463, US
+                        <p>Ünvan</p>
+                        <h4>Atatürk prospekti 2a
 
                         </h4>
                         <div class="social-networks">
@@ -29,9 +29,9 @@
 
                     </div>
                     <div class="information-right">
-                        <p>inquiry</p>
-                        <h4>hello@hubfolio.agency</h4>
-                        <h4>+0685689696</h4>
+                        <p>Əlaqə</p>
+                        <h4>contact@jobing.az</h4>
+                        <h4>+994 70 730 72 30</h4>
                     </div>
 
                 </div>
@@ -39,21 +39,15 @@
         </div>
         <div class="copyright">
             <div class="left">
-                © 2024 <a href=""> Hubfolio Agency. </a>All Right Reserved
+                © 2024-2025 <a href=""> Fox Studio. </a>Bütün hüquqlar qorunur
             </div>
             <div class="right">
                 <ul>
                     <li class=" hover-this">
-                        <a href="./" class="active">Home</a>
+                        <a href="{{route('home')}}" class="active">Biz kimik?</a>
                     </li>
                     <li class="hover-this">
-                        <a href="./works.html">Works</a>
-                    </li>
-                    <li class="hover-this">
-                        <a href="./home.html">Studio</a>
-                    </li>
-                    <li class="hover-this">
-                        <a href="./news.html">News</a>
+                        <a href="{{route('projects')}}">Layihələr</a>
                     </li>
                 </ul>
             </div>

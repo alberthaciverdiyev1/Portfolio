@@ -63,26 +63,19 @@
                 </span>
 
                         </h4>
-                        <button class=" hover-this play-button service-button philosophy-button">
-                            <a href="./services.html">
-                                About Hubfolio
-                                <i class="bi bi-arrow-up-right"></i>
-                            </a>
-                        </button>
+
                     </div>
 
                 </div>
                 <div class="ticker-wrap">
                     <div class="ticker">
                         <ul>
-                            <li>AI-Driven Solutions</li>
-                            <li>Flexible Price</li>
-                            <li>User Centric</li>
-                            <li>User Centric Design</li>
-                            <li>AI-Driven Solutions</li>
-                            <li>Flexible Price</li>
-                            <li>User Centric</li>
-                            <li>User Centric Design</li>
+                            <li>Müştəri Yönümlü Həllər</li>
+                            <li>Müasir Dizayn</li>
+                            <li>7/24 Xidmət</li>
+                            <li>Müştəri Yönümlü Həllər</li>
+                            <li>Müasir Dizayn</li>
+                            <li>7/24 Xidmət</li>
                         </ul>
                     </div>
                 </div>
@@ -170,7 +163,7 @@
                 <div class="btn-works">
                     <button class=" featured-works-button hover-this play-button service-button philosophy-button">
                         <a href="{{route('projects')}}">
-                            Check Our Portfolio
+                           Portfolio bax
                             <i class="bi bi-arrow-up-right"></i>
                         </a>
                     </button>
@@ -186,7 +179,7 @@
         <div class="container">
             <div class="our-clients">
                 <ul>
-                    <li>Our Clients & Partners</li>
+                    <li>Partnyorlarımız</li>
                 </ul>
                 <div class="brands">
                     @forelse($partners as $partner)
@@ -213,7 +206,7 @@
             </div>
             <div class="featured-right">
                 <h4>
-                    İki ilddən artıqdır ki, 20+ partnyorumuza hədəflərinə çatmaqda kömək etmişik
+                    İki ildən artıqdır ki, 20+ partnyorumuza hədəflərinə çatmaqda kömək etmişik
                     <span> – onların yüksək məmnuniyyəti və müsbət rəyləri bizim üçün ən böyük uğurdur.</span>
                 </h4>
                 <button class="testimonials-button">
@@ -226,7 +219,7 @@
                             <i class="fa-star"></i>
                         </div>
                         <div class="rating-desc ">
-                            <p>based on 24 rewies</p>
+                            <p>20+ rəyə əsasən</p>
                         </div>
                     </div>
 
@@ -282,127 +275,7 @@
 
 
     </section>
-    @if(false)
-        <section id="award ">
-            <div class="container">
-                <div class=" award container">
-                    <div class="featured-left">
-                        <ul>
-                            <li>Awards & Recognition</li>
-                        </ul>
-                    </div>
-                    <div class="featured-right">
-                        <h4>
-                            Efforts to receive worthy rewards, awards & recognition
-                            <span>
-                help us affirm our brand.
-              </span>
-                        </h4>
 
-                    </div>
-                </div>
-                <table class="award-table">
-                    <tr>
-                        <th>Hosted</th>
-                        <th>Award title</th>
-                        <th>Date</th>
-                    </tr>
-                    <tbody>
-                    <tr>
-                        <td>Awwwards</td>
-                        <td>SOTY 2023 - 1st Winner</td>
-                        <td>May 2023</td>
-                    </tr>
-                    <tr>
-                        <td>css awards</td>
-                        <td>Top 5 Best of eCommerce Websites 2022</td>
-                        <td>Dec 2022</td>
-                    </tr>
-                    <tr>
-                        <td>Awwwards</td>
-                        <td>Honor SOTD November, 2022r</td>
-                        <td>Nov 2022</td>
-                    </tr>
-                    <tr>
-                        <td>Behance Portfolio</td>
-                        <td>Winner – US Behance Portfolio Review 2021</td>
-                        <td>Aug 2021</td>
-                    </tr>
-                    <tr>
-                        <td>ui/ux global award</td>
-                        <td>Top 10 Best of Mobile App Design 2021</td>
-                        <td>Mar 2021</td>
-                    </tr>
-                    <tr>
-                        <td>fwa us award</td>
-                        <td>Winner – Best of Architecture Website 2020</td>
-                        <td>Sep 2020</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <button class=" table-button hover-this play-button ">
-                    <a href="./services.html">
-                        Show More
-
-                    </a>
-                    <i class="bi bi-chevron-right"></i>
-                </button>
-
-            </div>
-
-
-        </section>
-
-    @endif
-    <section id="articles">
-        <div class="container">
-            <div class=" award container">
-                <div class="featured-left">
-                    <ul>
-                        <li>Latest Articles</li>
-                    </ul>
-                </div>
-                <div class="featured-right">
-                    <h4>
-                        The place that we share everything related to
-                        <span>
-                design trends, tips and more.
-              </span>
-                    </h4>
-
-
-                </div>
-
-            </div>
-            <div class="article-cards">
-                <div class="article-card">
-                    <figure>
-                        <img src="{{asset('/images/articlecard.jpg')}}" alt="">
-                    </figure>
-
-                    <h4>Hubfolio agency revolutionizes work with the
-                        power of AI-Driven</h4>
-                    <p>Design Trends
-                        <span>/ May 15, 2024 </span>
-                    </p>
-                </div>
-                <div class="article-card">
-                    <figure>
-                        <img src="{{asset('/images/articlecard2.jpg')}}" alt="">
-                    </figure>
-
-                    <h4>Hubfolio agency revolutionizes work with the power of AI-Driven</h4>
-                    <p>Experience
-
-                        <span>/ May 15, 2024 </span>
-                    </p>
-                </div>
-
-
-            </div>
-        </div>
-
-    </section>
     <section id="contact-us">
         <div class="container">
             <div class="contact-us">
@@ -413,48 +286,38 @@
 
                     </h3>
 
-                    <div class="bottom">
-                        <p>+068 5681 96 96</p>
-                        <span>Call us for urgent</span>
-                        <button class=" hover-this play-button service-button philosophy-button">
-                            <a href="./services.html">
-                                About Hubfolio
-                                <i class="bi bi-arrow-up-right"></i>
-                            </a>
-                        </button>
-                    </div>
 
                 </div>
                 <div class="right">
                     <form id="contactForm">
                         <div class="form-box">
                             <div class="fullname">
-                                <label for="fullname">Full Name <span>*</span></label>
-                                <input type="text" id="fullname" placeholder="Your full name">
+                                <label for="fullname">Ad, Soyad <span>*</span></label>
+                                <input type="text" id="fullname" placeholder="Sizin adınız və soyadınız">
                                 <span class="error-message" id="error-fullname"></span>
                             </div>
                             <div class="email-address">
-                                <label for="email">Email Address <span>*</span></label>
-                                <input type="email" id="email" placeholder="Your email address">
+                                <label for="email">Email <span>*</span></label>
+                                <input type="email" id="email" placeholder="Email Adresiniz">
                                 <span class="error-message" id="error-email"></span>
                             </div>
                         </div>
                         <div class="form-box">
                             <div class="subject">
-                                <label for="subject">Subject <span>*</span></label>
-                                <input type="text" id="subject" placeholder="subject">
+                                <label for="subject">Başlıq <span>*</span></label>
+                                <input type="text" id="subject" placeholder="Başlıq">
                                 <span class="error-message" id="error-subject"></span>
                             </div>
                             <div class="budget">
-                                <label for="budget">Your Budget <span class="optional">(Optional)</span></label>
-                                <input type="text" id="budget" placeholder="A range of budget for project">
+                                <label for="budget">Büdcəniz <span class="optional">(Məcburi deyil)</span></label>
+                                <input type="text" id="budget" placeholder="Sizə uyğun olan büdcənizi daxil edin">
                                 <span class="error-message" id="error-budget"></span>
                             </div>
                         </div>
                         <div class="form-box message-box">
                             <div class="message">
-                                <label for="message">Message</label>
-                                <textarea id="message" placeholder="Write your message here..."></textarea>
+                                <label for="message">Mesaj</label>
+                                <textarea id="message" placeholder="Mesajınızı yazın..."></textarea>
                                 <span class="error-message" id="error-message"></span>
                             </div>
                         </div>
@@ -462,7 +325,7 @@
                         <span style="color: #00bb00" id="controller-message"></span>
 
                         <button type="submit" class="send-button">
-                            Send Your Message <i class="bi bi-arrow-up-right"></i>
+                            Göndərin <i class="bi bi-arrow-up-right"></i>
                         </button>
                     </form>
 

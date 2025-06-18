@@ -3,11 +3,11 @@
 @section('content')
 
     <div id="hero" class="hero-work">
-        <h1>Work Card</h1>
+        <h1>Layihələrimiz</h1>
         <div class="router">
-            <div class=""><a href="{{route('home')}}">Home</a></div>
+            <div class=""><a href="{{route('home')}}">Ana Səhifə</a></div>
             <i class="fa-solid fa-arrow-right-long"></i>
-            <div class="green"><a href="{{route('projects')}}">Portfolio</a></div>
+            <div class="green"><a href="{{route('projects')}}">Layihələr</a></div>
         </div>
 
     </div>

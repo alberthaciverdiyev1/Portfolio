@@ -17,7 +17,7 @@
                 </button>
 
                 <div class="hero-description">
-                    <p>İstər korporativ sayt, istər sə də e-ticarət - Biznesinizin məqsədinə uyğun ən doğru həlləri təklif edirik.</p>
+                    <p>İstər korporativ sayt, istərsə də e-ticarət - Biznesinizin məqsədinə uyğun ən doğru həlləri təklif edirik.</p>
                 </div>
             </div>
             <div class="hero-right">

@@ -9,6 +9,3 @@ Route::controller(\App\Http\Controllers\BaseController::class)->group(function (
     Route::match(['get', 'post'], '/contact', 'contact')->name('contact');
 });
 
-Route::controller(HomeController::class)->prefix('admin')->group(function () {
-   Route::get('/', 'home')->name('home');
-});
