@@ -998,6 +998,7 @@ header {
     border-radius: 50%;
     border: 1px solid var(--border-color);
     aspect-ratio: 1 / 1;
+    background-color: var(--accent-text-color);
 }
 
 .brand figure {
