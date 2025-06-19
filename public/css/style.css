@@ -883,6 +883,7 @@ header {
 .featured-card-left .top h3 {
     font-size: 3rem;
     font-weight: 400;
+    color: var(--accent-text-color);
 }
 
 .featured-card-left .bottom .buttons button {
