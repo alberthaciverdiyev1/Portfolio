@@ -832,6 +832,8 @@ header {
 
 .featured-card-right img {
     border-radius: 16px;
+    max-height: 250px;
+    max-width: auto;
 }
 
 .featured-card p {
@@ -900,7 +902,7 @@ header {
 
 .featured-card-right img {
     width: 100%;
-    height: 100%;
+    height: auto;
 
 }
 
@@ -1564,6 +1566,9 @@ textarea {
 
         min-width: calc(100% / 2);
     }
+    .featured-card-right img {
+    max-height: 250px;
+}
 }
 
 
@@ -1601,6 +1606,9 @@ textarea {
     .featured-card-left {
         width: 100%;
     }
+    .featured-card-right img {
+    max-height: 250px;
+}
     .featured-card-left .bottom p{
         
     }
@@ -1756,6 +1764,9 @@ textarea {
          .hero-description {
              width: 90%;
             }
+         .featured-card-right img {
+             max-height: 150px;
+        }
     }
     .error-message {
         color: red;
