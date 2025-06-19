@@ -1,9 +1,10 @@
-
 .hero-work h1 {
-    font-size: 90px;
+    font-size: 60px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: -3px;
+    color: var(--accent-text-color);
+    text-shadow: 8px 4px 16px #FF6A00, 2px 1px 2px #FF6A00;
 
 }
 
