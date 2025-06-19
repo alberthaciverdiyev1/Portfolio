@@ -499,12 +499,12 @@ header {
 }
 
 .hero-description {
-    width: 80%;
+    width: 100%;
     margin-top: 10rem;
 }
 
 .hero-description p {
-    font-size: var(--text-md);
+    font-size: var(--text-lg2);
     font-weight: 400;
     margin: 0;
 }
@@ -1749,6 +1749,13 @@ textarea {
 
             min-width: 100%;
         }
+
+        .hero-description p {
+             font-size: var(--text-lg) !important;
+         }
+         .hero-description {
+             width: 90%;
+            }
     }
     .error-message {
         color: red;
