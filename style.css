@@ -517,6 +517,9 @@ body.dark .nav-icon {
   color: white;
 }
 
+body.dark .mobile-a {
+  border-color: #ff7a00 !important;
+}
 body.dark .head-content a,
 body.dark .solvings a {
   border: 1px solid white;
