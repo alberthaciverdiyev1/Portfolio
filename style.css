@@ -1255,6 +1255,9 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 1px;
     border: none;
   }
+  body.dark .footer-line {
+    background-color: #444444;
+  }
   .line {
     display: none;
   }
@@ -1312,5 +1315,4 @@ input[type="number"]::-webkit-outer-spin-button {
   .footer-icons {
     gap: 25px;
   }
-
 }
