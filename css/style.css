@@ -376,6 +376,7 @@ form textarea {
   border: none;
   border-bottom: 1px solid black;
   outline: none;
+  background-color: transparent;
 }
 
 form textarea {
@@ -448,9 +449,6 @@ footer {
   font: 400 14px Inter;
   margin-bottom: 15px;
 }
-/* .footer-contacts ul { */
-/* width: 170px; */
-/* } */
 
 .footer-icons {
   display: flex;
