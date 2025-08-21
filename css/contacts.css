@@ -82,6 +82,9 @@ form textarea {
   display: block;
   border: none;
   height: 1px;
+  background-color: #bababa;
+}
+body.dark .footer-line {
   background-color: #444444;
 }
 .footer-bottom {
