@@ -576,7 +576,10 @@ body.dark input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
 }
-
+body.dark .navbar,
+body.dark .modes {
+  border-color: #1d1d1d;
+}
 @media ((max-width: 1920px) and (min-width:1800px)) {
   .head-content h1 {
     font-size: 96px;
