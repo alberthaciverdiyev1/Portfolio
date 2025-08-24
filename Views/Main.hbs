@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> Layout.Head}}
+
+<body>
+{{#if useLayout}}
+
+    <div class="header">
+        {{> Layout.Navbar}}
+
+        <main>
+            {{{ body}}}
+        </main>
+        {{> Layout.Footer}}
+    </div>
+{{else}}
+    {{{body}}}
+{{/if}}
+{{> Layout.Js}}
+
+</body>
+</html>

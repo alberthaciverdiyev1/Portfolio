@@ -1,0 +1,9 @@
+<script src="/common/js/script.js"></script>
+
+
+{{#if js}}
+    {{#each js}}
+        <script type="module" src="/common{{this}}"></script>
+    {{/each}}
+{{/if}}
+

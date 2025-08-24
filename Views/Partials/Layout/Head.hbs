@@ -1,0 +1,14 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fox Studio</title>
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <link rel="stylesheet" href="/common/css/style.css" />
+
+    {{#if css}}
+        {{#each css}}
+            <link rel="stylesheet" href="/common{{this}}">
+        {{/each}}
+    {{/if}}
+
+</head>
