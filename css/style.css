@@ -233,18 +233,18 @@ html {
 }
 
 .partners-img {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
   margin-top: 50px;
   margin-bottom: 140px;
+  overflow: hidden;
 }
-.partners-img div {
+
+.partners-track {
   display: flex;
-  align-items: center;
-  width: 40%;
-  justify-content: space-between;
+  gap: 105px;
+  animation: marquee 20s linear infinite;
 }
+
 .partners1 {
   width: 200px;
 }
@@ -254,6 +254,14 @@ html {
 .partners3,
 .partners4 {
   width: 140px;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .we h3 {
@@ -940,6 +948,9 @@ body.dark .modes {
   .j-card img {
     width: 100%;
   }
+  .partners-track {
+    gap: 80px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -1019,6 +1030,9 @@ body.dark .modes {
   }
   .navbar div {
     gap: 15px;
+  }
+  .partners-track {
+    gap: 60px;
   }
 }
 
@@ -1319,5 +1333,8 @@ body.dark .modes {
   }
   .footer-icons {
     gap: 25px;
+  }
+  .partners-track {
+    gap: 40px;
   }
 }
