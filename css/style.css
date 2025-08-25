@@ -1103,6 +1103,9 @@ body.dark .modes {
   .r-card {
     width: 35% !important;
   }
+  .partners-track {
+    animation: marquee 15s linear infinite;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1299,6 +1302,9 @@ body.dark .modes {
   .mobile-a:hover {
     background-color: #070707;
   }
+  .partners-track {
+    animation: marquee 10s linear infinite;
+  }
 }
 
 @media (max-width: 390px) {
@@ -1336,5 +1342,6 @@ body.dark .modes {
   }
   .partners-track {
     gap: 40px;
+    animation: marquee 5s linear infinite;
   }
 }
