@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.menu-nav ul {
+  margin: 0;
+  padding: 0;
+}
+.menu-nav {
+  margin-bottom: 50px !important;
+  padding: 15px 30px !important;
+}
+.menu-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-icons {
+  flex-direction: column;
+  margin-bottom: 0 !important;
+  gap: 15px !important;
+}
+.menu-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.menu-left a {
+  font: 700 38px Inter;
+}
+.menu-left a {
+  text-decoration: none;
+  color: black;
+}
+.menu-left a:first-child {
+  color: #ff7a00;
+}
+.menu-left a:hover {
+  color: #ff7a00;
+}
+.menu-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.menu-info {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.menu-info p {
+  font: 400 16px Inter;
+}
+.menu-b-left {
+  display: flex;
+  gap: 40px;
+}
+.modes img {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+body.dark .menu-left a {
+  color: white;
+}
+body.dark .menu-left a:first-child,
+body.dark .menu-left a:hover {
+  color: #ff7a00;
+}
+@media ((max-width: 1920px) and (min-width:1500px)) {
+  .menu-left a {
+    font-size: 48px;
+  }
+  .menu-icons div {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .menu-icons img {
+    width: 30px;
+    height: 30px;
+  }
+  .modes img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+@media (max-width: 950px) {
+  .menu-info p {
+    font-size: 12px;
+  }
+  .menu-left a {
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .menu-b-left {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+@media (max-width: 390px) {
+  .menu-icons {
+    gap: 25px !important;
+  }
+}

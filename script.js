@@ -9,6 +9,11 @@ const icon5 = document.querySelectorAll(".icon5");
 const figure = document.querySelector(".figure");
 const form = document.querySelector("form");
 const importantFields = document.querySelectorAll(".important");
+const backIcon = document.querySelector(".back img");
+const closeIcon = document.querySelector(".close");
+const phoneImg = document.querySelector(".phone");
+const mailImg = document.querySelector(".mail");
+const placeImg = document.querySelector(".place");
 
 if (lightBtn && darkBtn) {
   lightBtn.classList.add("active");
@@ -26,6 +31,13 @@ if (lightBtn && darkBtn) {
     icon5.forEach((icon) => (icon.src = "./img/Vector(4).svg"));
 
     if (figure) figure.src = "./img/container.svg";
+    if (backIcon) backIcon.src = "./img/back.svg";
+    if (closeIcon) closeIcon.src = "./img/close.svg";
+
+    if (phoneImg) phoneImg.src = "./img/place.svg";
+    if (mailImg) mailImg.src = "./img/mail.svg";
+    if (placeImg) placeImg.src = "./img/place.svg";
+
     localStorage.setItem("theme", "light");
     document.body.classList.remove("dark");
   });
@@ -42,6 +54,13 @@ if (lightBtn && darkBtn) {
     icon4.forEach((icon) => (icon.src = "./img/dark-i4.svg"));
     icon5.forEach((icon) => (icon.src = "./img/dark-i3.svg"));
     if (figure) figure.src = "./img/container-dark.svg";
+    if (backIcon) backIcon.src = "./img/back-w.svg";
+    if (closeIcon) closeIcon.src = "./img/close-w.svg";
+
+    if (phoneImg) phoneImg.src = "./img/phone-w.svg";
+    if (mailImg) mailImg.src = "./img/mail-w.svg";
+    if (placeImg) placeImg.src = "./img/place-w.svg";
+
     localStorage.setItem("theme", "dark");
     document.body.classList.add("dark");
   });
@@ -77,4 +96,3 @@ if (form) {
     }
   });
 }
-
