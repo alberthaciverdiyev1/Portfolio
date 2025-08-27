@@ -1,0 +1,148 @@
+{{> Admin.Layout.Head}}
+
+<div class="flex h-screen bg-gray-50 ">
+    <div class="flex flex-col flex-1 w-full">
+        {{>Admin.Layout.Navbar}}
+        <main class="h-full overflow-y-auto">
+            <div class="container px-6 mx-auto grid">
+                <h2 class="my-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
+                    Services Dashboard
+                </h2>
+
+                <!-- Inline Service Add Form (One Row) -->
+                <div class="mb-4 p-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                    <form action="/service" method="POST" enctype="multipart/form-data" class="flex flex-wrap items-end gap-2">
+                        <!-- Icon -->
+                        <div class="flex flex-col">
+                            <label class="text-xs font-medium text-gray-700 dark:text-gray-200" for="icon">Icon</label>
+                            <input type="text" name="icon" id="icon" placeholder="Icon" required
+                                   class="w-24 px-2 py-1 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 focus:outline-none focus:ring focus:ring-purple-400" />
+                        </div>
+
+                        <!-- Title -->
+                        <div class="flex flex-col">
+                            <label class="text-xs font-medium text-gray-700 dark:text-gray-200" for="title">Title</label>
+                            <input type="text" name="title" id="title" placeholder="Title" required
+                                   class="w-32 px-2 py-1 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 focus:outline-none focus:ring focus:ring-purple-400" />
+                        </div>
+
+                        <!-- Description -->
+                        <div class="flex flex-col">
+                            <label class="text-xs font-medium text-gray-700 dark:text-gray-200" for="description">Description</label>
+                            <input type="text" name="description" id="description" placeholder="Description" required
+                                   class="w-48 px-2 py-1 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 focus:outline-none focus:ring focus:ring-purple-400" />
+                        </div>
+
+                        <!-- Image -->
+                        <div class="flex flex-col">
+                            <label class="text-xs font-medium text-gray-700 dark:text-gray-200" for="image">Image</label>
+                            <input type="file" name="image" id="image" accept="image/*"
+                                   class="w-36 text-xs text-gray-600 dark:text-gray-200 focus:outline-none" />
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit"
+                                    class="px-3 py-1 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:ring-purple-400">
+                                Add
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Existing Services Table -->
+                <div class="w-full overflow-hidden rounded-lg shadow-xs bg-white dark:bg-gray-800">
+                    <div class="w-full overflow-x-auto">
+                        <table class="w-full whitespace-no-wrap text-sm">
+                            <thead>
+                            <tr
+                                    class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                            >
+                                <th class="px-3 py-2">Icon</th>
+                                <th class="px-3 py-2">Title</th>
+                                <th class="px-3 py-2">Description</th>
+                                <th class="px-3 py-2">Image</th>
+                                <th class="px-3 py-2">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                            {{#each data.services}}
+                                <tr class="text-gray-700 dark:text-gray-400">
+                                    <td class="px-3 py-2">{{this.icon}}</td>
+                                    <td class="px-3 py-2">{{this.title}}</td>
+                                    <td class="px-3 py-2">{{this.description}}</td>
+                                    <td class="px-3 py-2">
+                                        {{#if this.image}}
+                                            <img src="/Services/{{this.image}}" width="30" alt="Service Image" class="w-10 h-10 rounded-md object-cover"/>
+                                        {{/if}}
+                                    </td>
+                                    <td class="px-3 py-2 flex gap-2 items-center">
+                                        <!-- Edit Button -->
+                                        <button
+                                                type="button"
+                                                class="px-4 py-2 text-sm font-semibold text-whitring-black-500 hovering-black-600 focus:outline-none focus:ring focus:ring-black-300"
+                                                onclick="document.getElementById('edit-modal-{{this.id}}').classList.remove('hidden')">
+                                            Edit
+                                        </button>
+
+                                        <!-- Delete Button -->
+                                        <form action="/service/delete/{{this.id}}" method="POST" onsubmit="return confirm('Are you sure?')">
+                                            <button
+                                                    type="submit"
+                                                    class="px-2 py-1 text-xs font-medium text-white bg-red-600 rounded hover:bg-red-700 focus:outline-none focus:ring focus:ring-red-300">
+                                                Delete
+                                            </button>
+                                        </form>
+
+                                        <!-- Edit Modal -->
+                                        <div id="edit-modal-{{this.id}}" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2 p-6">
+                                                <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Edit Service</h3>
+                                                <form action="/service/{{this.id}}" method="POST" enctype="multipart/form-data" class="space-y-4">
+
+                                                    <!-- Icon -->
+                                                    <div class="flex flex-col">
+                                                        <label class="text-xs font-medium text-gray-700 dark:text-gray-200 mb-1">Icon</label>
+                                                        <input type="text" name="icon" value="{{this.icon}}" class="w-full px-3 py-2 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 focus:outline-none focus:ring focus:ring-purple-400"/>
+                                                    </div>
+
+                                                    <!-- Title -->
+                                                    <div class="flex flex-col">
+                                                        <label class="text-xs font-medium text-gray-700 dark:text-gray-200 mb-1">Title</label>
+                                                        <input type="text" name="title" value="{{this.title}}" class="w-full px-3 py-2 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 focus:outline-none focus:ring focus:ring-purple-400"/>
+                                                    </div>
+
+                                                    <!-- Description -->
+                                                    <div class="flex flex-col">
+                                                        <label class="text-xs font-medium text-gray-700 dark:text-gray-200 mb-1">Description</label>
+                                                        <textarea name="description" rows="4" class="w-full px-3 py-2 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 focus:outline-none focus:ring focus:ring-purple-400">{{this.description}}</textarea>
+                                                    </div>
+
+                                                    <!-- Image -->
+                                                    <div class="flex flex-col">
+                                                        <label class="text-xs font-medium text-gray-700 dark:text-gray-200 mb-1">Image</label>
+                                                        <input type="file" name="image" accept="image/*" class="w-full text-xs text-gray-600 dark:text-gray-200 focus:outline-none"/>
+                                                    </div>
+
+                                                    <!-- Buttons -->
+                                                    <div class="flex justify-end gap-3">
+                                                        <button type="button" class="px-4 py-2 text-sm bg-gray-400 rounded hover:bg-gray-500" onclick="document.getElementById('edit-modal-{{this.id}}').classList.add('hidden')">Cancel</button>
+                                                        <button type="submit" class="px-4 py-2 text-sm bg-purple-600 text-white rounded hover:bg-purple-700">Save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+
+
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>

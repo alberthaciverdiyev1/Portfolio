@@ -1,92 +1,70 @@
-import {postData} from "../../Helpers/callApi.js";
 import {css, js} from "../../Helpers/assets.js";
-
-async function AuthView(request, reply) {
-
-    const view = {
-        title: 'Login Page',
-        css: css(['registerlogin.css', 'app.css']),
-        js: js(['gotop.js',
-            'auth/login.js']),
-        useLayout: false
-    };
-
-    return reply.view('Pages/Auth/Auth.hbs', view);
-}
+import bcrypt from "bcrypt";
+import {createUser, getUserByEmail} from "../../Helpers/Queries/userQueries.js";
 
 async function Login(request, reply) {
-    const {email, password} = request.body
+    if (request.method === "POST") {
+        const { email, password } = request.body;
 
-    const response = await postData('/login', {email, password})
+        const user = getUserByEmail(email);
+        if (!user) {
+            return reply.view("Pages/Admin/Auth/Login.hbs", {
+                error: "User not found",
+                email,
+                css: css([]),
+                js: js([]),
+                useLayout: false,
+            });
+        }
 
-    if (response.token) {
-        request.session.set('jwt_token', response.token)
-        request.session.set('user', response.user)
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) {
+            return reply.view("Pages/Admin/Auth/Login.hbs", {
+                error: "Incorrect password",
+                email,
+                css: css([]),
+                js: js([]),
+                useLayout: false,
+            });
+        }
 
-        return reply.code(201).send({
-            status: 201,
-            message: 'Login successfully!',
-            route: '/profile',
-        })
-    } else {
-        return reply.code(response.status || 400).send(response)
+        request.session.set("user", { id: user.id, email: user.email });
+
+        return reply.view("Pages/Admin/Auth/Login.hbs", {
+            success: "Login successful! You are being redirected...",
+            email,
+            css: css([]),
+            js: js([]),
+            useLayout: false,
+        });
     }
-}
 
+    return reply.view("Pages/Admin/Auth/Login.hbs", {
+        css: css([]),
+        js: ["/js/pages/redirect.js"],
+        useLayout: false,
+    });
+}
 async function Register(request, reply) {
-    const {name, email, password, password_confirmation} = request.body;
-    console.log({name, email, password, password_confirmation});
-    const response = await postData('/register', {name, email, password, password_confirmation})
 
-    if (response.token) {
-        request.session.set('jwt_token', response.token)
-        request.session.set('user', response.user)
+    try {
+        const email = 'alberthaciverdiyev55@gmail.com';
+        const password = 'Salam123!';
 
-        return reply.code(201).send({
-            status: 201,
-            message: 'Register successfully!',
-            route: '/',
-        })
-    } else {
-        return reply.code(response.status || 400).send(response)
+        const existing = getUserByEmail(email);
+        if (existing) {
+            return reply.code(400).send({error: "This Email Already Registered"});
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const result = createUser(email, hashedPassword);
+
+        return reply.send({success: true, userId: result.lastInsertRowid});
+    } catch (err) {
+        console.error(err);
+        return reply.code(500).send({error: "An Error Accrued"});
     }
-}
 
-
-async function OtpView(request, reply) {
-
-    const view = {
-        title: 'Otp Page',
-        css: css(['registerlogin.css', 'app.css', 'otp.css']),
-        js: js(['otp.js']),
-        useLayout: false
-
-    };
-    return reply.view('Pages/Auth/Otp.hbs', view);
-}
-
-async function ForgotPasswordView(request, reply) {
-
-    const view = {
-        title: 'Forgot Password Page',
-        css: ['forgot.css', 'app.css'],
-        js: [],
-        useLayout: false
-
-    };
-    return reply.view('Pages/Auth/ForgotPassword.hbs', view);
-}
-
-async function ResetPasswordView(request, reply) {
-
-    const view = {
-        title: 'Reset Password Page',
-        css: css(['reset.css', 'app.css']),
-        js: [],
-        useLayout: false
-
-    };
-    return reply.view('Pages/Auth/ResetPassword.hbs', view);
 }
 
 async function Logout(req, res) {
@@ -98,10 +76,6 @@ async function Logout(req, res) {
 
 
 export default {
-    AuthView,
-// ResetPasswordView,
-    //   ForgotPasswordView,
-    // OtpView,
     Register,
     Login,
     Logout

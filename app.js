@@ -15,6 +15,8 @@ import i18n from './Plugins/i18n.js'
 import i18next from 'i18next'
 import multipart from '@fastify/multipart'
 import fastifyMinify from 'fastify-minify'
+import fastifyFormbody from '@fastify/formbody'
+import './Helpers/db.js'
 
 dotenv.config()
 
@@ -34,8 +36,12 @@ const fastify = Fastify({ logger: false })
 
 await fastify.register(fastifyCookie)
 await fastify.register(i18n)
-await fastify.register(multipart)
-
+await fastify.register(fastifyFormbody)
+await fastify.register(multipart, {
+    limits: {
+        fileSize: 10 * 1024 * 1024, // Maks 10MB
+    }
+});
 fastify.register(secureSession, {
     key: fs.readFileSync(path.join(__dirname, 'secret-key')),
     cookie: {
@@ -61,24 +67,8 @@ await fastify.register(fastifyMinify, {
     },
 })
 
-handlebars.registerHelper('strLimit', function (text, limit) {
-    if (!text || typeof text !== 'string') return ''
-    return text.length > limit ? text.substring(0, limit) + '...' : text
-})
 
-handlebars.registerHelper('forLoop', function (n, block) {
-    let accum = ''
-    for (let i = 1; i <= n; ++i) {
-        accum += block.fn(i)
-    }
-    return accum
-})
 
-handlebars.registerHelper('range', function (start, end, options) {
-    let accum = []
-    for (let i = start; i <= end; ++i) accum.push(i)
-    return accum
-})
 
 handlebars.registerHelper('t', function (key, options) {
     const lang = options?.data?.root?.lang || 'az'
@@ -91,14 +81,6 @@ handlebars.registerHelper('t', function (key, options) {
     }
 })
 
-handlebars.registerHelper('splitArray', function (array, parts, options) {
-    const chunkSize = Math.ceil(array.length / parts)
-    const chunks = []
-    for (let i = 0; i < parts; i++) {
-        chunks.push(array.slice(i * chunkSize, (i + 1) * chunkSize))
-    }
-    return chunks.map(chunk => options.fn(chunk)).join('')
-})
 
 handlebars.registerHelper('ifNo', function (value, options) {
     if (!value) {
@@ -108,63 +90,13 @@ handlebars.registerHelper('ifNo', function (value, options) {
     }
 })
 
-// handlebars.registerHelper('equal', function (a, b) {
-//     return a === b
-// })
 
-
-//gt z
-
-handlebars.registerHelper("gt", function (a, b) {
-  return a > b;
-});
-handlebars.registerHelper("lt", function (a, b) {
-  return a < b;
-});
-handlebars.registerHelper("math", function (lvalue, operator, rvalue) {
-  lvalue = parseFloat(lvalue);
-  rvalue = parseFloat(rvalue);
-
-  switch (operator) {
-    case "+":
-      return lvalue + rvalue;
-    case "-":
-      return lvalue - rvalue;
-    case "*":
-      return lvalue * rvalue;
-    case "/":
-      return lvalue / rvalue;
-    case "%":
-      return lvalue % rvalue;
-    default:
-      throw new Error("Unknown operator: " + operator);
-  }
-});
 
 handlebars.registerHelper('readTime', function (words) {
     return Math.ceil(words.length / 200)
 })
 
-handlebars.registerHelper("if_lt", function (a, b, options) {
-  if (a < b) {
-    return options.fn(this);
-  }
-  return options.inverse(this);
-});
-handlebars.registerHelper('ifEquals', function (a, b, options) {
-    return a === b ? options.fn(this) : options.inverse(this);
-});
 
-
-handlebars.registerHelper('css', function (file) {
-    const prefix = process.env.NODE_ENV === 'production' ? '/assets/css/' : '/css/'
-    return new handlebars.SafeString(`<link rel="stylesheet" href="${prefix}${file}">`)
-})
-
-handlebars.registerHelper('js', function (file) {
-    const prefix = process.env.NODE_ENV === 'production' ? '/assets/js/' : '/js/'
-    return new handlebars.SafeString(`<script src="${prefix}${file}"></script>`)
-})
 
 fastify.register(pointOfView, {
     engine: { handlebars },
@@ -227,10 +159,10 @@ fastify.get('/test', async (request, reply) => {
     }
 })
 
-fastify.listen({ port: 2002, host: '0.0.0.0' }, err => {
+fastify.listen({ port: 2000, host: '0.0.0.0' }, err => {
     if (err) {
         console.error(err)
         process.exit(1)
     }
-    console.log('Server running on http://localhost:2001')
+    console.log('Server running on http://localhost:2000')
 })
