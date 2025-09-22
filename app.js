@@ -24,12 +24,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const partialsDir = path.join(__dirname, 'Views', 'Partials')
 const partials = {}
-const globPattern = path.join('**', '*.hbs').replace(/\\/g, '/') 
+const globPattern = path.join('**', '*.hbs').replace(/\\/g, '/')
 const files = globSync(globPattern, { cwd: partialsDir, posix: true })
 
 files.forEach(file => {
     const name = file.replace(/\.hbs$/, '').replace(/\//g, '.')
-    partials[name] = path.join('Partials', file).replace(/\\/g, '/') 
+    partials[name] = path.join('Partials', file).replace(/\\/g, '/')
 })
 
 const fastify = Fastify({ logger: false })
@@ -132,7 +132,8 @@ fastify.addHook('preHandler', async (request, reply) => {
     const originalView = reply.view.bind(reply);
 
     reply.view = async (template, data = {}, opts = {}) => {
-        const user = request.session.get('user') || null;
+     //   const user = request.session.get('user') || null;
+        const user =  null;
         const jwtToken = request.session.get('jwt_token') || null;
 
         const currentRoute = (request.routerPath || request.raw.url || '').split('/').join('');
