@@ -92,7 +92,7 @@ if (form) {
         });
 
         const result = await response.json();
-
+        console.log(result);
         if (result.success) {
           alert("Müraciətiniz göndərildi!");
           form.reset();

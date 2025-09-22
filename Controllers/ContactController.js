@@ -10,7 +10,6 @@ async function sendTgMessage(message) {
 
 // Contact page endpoint
 async function contactPage(request, reply) {
-    console.log(request.method)
     if (request.method === 'POST') {
         const { username, email, title, budget, message } = request.body;
 
@@ -43,7 +42,6 @@ async function contactPage(request, reply) {
     return reply.view('Pages/Static/Contact.hbs', view);
 }
 
-// Opsiyonel: Bot komutlarını dinleme
 bot.on('message', async (msg) => {
     if (msg.text === '/start') {
         await bot.sendMessage(msg.chat.id, 'Contact form Telegram botu aktif!');

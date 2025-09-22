@@ -42,15 +42,15 @@ await fastify.register(multipart, {
         fileSize: 10 * 1024 * 1024, // Maks 10MB
     }
 });
-// fastify.register(secureSession, {
-//     key: fs.readFileSync(path.join(__dirname, 'secret-key')),
-//     cookie: {
-//         path: '/',
-//         httpOnly: true,
-//         secure: false,
-//         maxAge: 30 * 24 * 60 * 60,
-//     },
-// })
+fastify.register(secureSession, {
+    key: fs.readFileSync(path.join(__dirname, 'secret-key')),
+    cookie: {
+        path: '/',
+        httpOnly: true,
+        secure: false,
+        maxAge: 30 * 24 * 60 * 60,
+    },
+})
 
 await fastify.register(fastifyStatic, {
     root: path.join(__dirname, process.env.NODE_ENV === 'production' ? 'Dist' : 'Public'),
@@ -132,15 +132,15 @@ fastify.addHook('preHandler', async (request, reply) => {
     const originalView = reply.view.bind(reply);
 
     reply.view = async (template, data = {}, opts = {}) => {
-     //   const user = request.session.get('user') || null;
-        const user =  null;
-      //  const jwtToken = request.session.get('jwt_token') || null;
+        const user = request.session.get('user') || null;
+        const jwtToken = request.session.get('jwt_token') || null;
 
         const currentRoute = (request.routerPath || request.raw.url || '').split('/').join('');
 
 
-      //  data.session = { user, jwtToken };
+        data.session = { user, jwtToken };
         data.user = user;
+       // data.setting = await getData('/settzzing', [], false, true, true);
       //  data.seo = await getData(`/seo/${currentRoute}`, [], false, true, true);
         console.log(data.seo);
         data.lang = request.cookies.lang || 'en';
