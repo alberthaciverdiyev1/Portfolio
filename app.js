@@ -134,14 +134,13 @@ fastify.addHook('preHandler', async (request, reply) => {
     reply.view = async (template, data = {}, opts = {}) => {
      //   const user = request.session.get('user') || null;
         const user =  null;
-        const jwtToken = request.session.get('jwt_token') || null;
+      //  const jwtToken = request.session.get('jwt_token') || null;
 
         const currentRoute = (request.routerPath || request.raw.url || '').split('/').join('');
 
 
-        data.session = { user, jwtToken };
+      //  data.session = { user, jwtToken };
         data.user = user;
-       // data.setting = await getData('/settzzing', [], false, true, true);
       //  data.seo = await getData(`/seo/${currentRoute}`, [], false, true, true);
         console.log(data.seo);
         data.lang = request.cookies.lang || 'en';
