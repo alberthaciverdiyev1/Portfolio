@@ -42,15 +42,15 @@ await fastify.register(multipart, {
         fileSize: 10 * 1024 * 1024, // Maks 10MB
     }
 });
-fastify.register(secureSession, {
-    key: fs.readFileSync(path.join(__dirname, 'secret-key')),
-    cookie: {
-        path: '/',
-        httpOnly: true,
-        secure: false,
-        maxAge: 30 * 24 * 60 * 60,
-    },
-})
+// fastify.register(secureSession, {
+//     key: fs.readFileSync(path.join(__dirname, 'secret-key')),
+//     cookie: {
+//         path: '/',
+//         httpOnly: true,
+//         secure: false,
+//         maxAge: 30 * 24 * 60 * 60,
+//     },
+// })
 
 await fastify.register(fastifyStatic, {
     root: path.join(__dirname, process.env.NODE_ENV === 'production' ? 'Dist' : 'Public'),
