@@ -55,26 +55,56 @@ if (lightBtn && darkBtn) {
 }
 
 if (form) {
-  form.addEventListener("submit", (e) => {
-    let allFilled = true;
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    importantFields.forEach((input) => {
-      if (!input.value.trim()) {
-        allFilled = false;
-        input.style.border = "1px solid red";
-      } else {
-        input.style.border = "";
+      let allFilled = true;
+      importantFields.forEach((input) => {
+        if (!input.value.trim()) {
+          allFilled = false;
+          input.style.border = "1px solid red";
+        } else {
+          input.style.border = "";
+        }
+      });
+
+      if (!allFilled) {
+        alert("Xahiş edirik bütün məcburi sahələri doldurun!");
+        return;
+      }
+
+      const formData = {
+        username: document.getElementById("username").value,
+        email: document.getElementById("email").value,
+        title: document.getElementById("title").value,
+        budget: document.getElementById("budget").value,
+        message: document.getElementById("message").value
+      };
+
+      try {
+        const response = await fetch("/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          alert("Müraciətiniz göndərildi!");
+          form.reset();
+        } else {
+          alert("Xəta baş verdi, zəhmət olmasa yenidən cəhd edin.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Xəta baş verdi, zəhmət olmasa yenidən cəhd edin.");
       }
     });
+  }
 
-    if (!allFilled) {
-      e.preventDefault();
-      alert("Xahiş edirik bütün məcburi sahələri doldurun!");
-    } else {
-      e.preventDefault();
-      alert("Müraciətiniz göndərildi!");
-      form.reset();
-    }
-  });
 }
 

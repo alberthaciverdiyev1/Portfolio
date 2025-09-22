@@ -4,6 +4,10 @@
   margin-bottom: 50px;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .contacts-info {
   margin-bottom: 60px;
 }
