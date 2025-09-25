@@ -10,10 +10,10 @@ export default async function route(fastify, options) {
     fastify.get('/',HomeController.homePage)
 
 
-    fastify.register(authRoutes);
-    fastify.register(blogRoutes);
+    // fastify.register(authRoutes);
+    // fastify.register(blogRoutes);
     fastify.register(projectRoutes);
     fastify.register(contactRoutes);
-    fastify.register(serviceRoutes);
+    // fastify.register(serviceRoutes);
 
 }
